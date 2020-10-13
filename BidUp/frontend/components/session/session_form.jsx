@@ -6,21 +6,20 @@ class SessionForm extends React.Component {
       super(props);
       this.state = {
         username: "",
-        password: ""
+        password: "",
+        errors: []
       }
 
       this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/"))
-        this.setState({
-            email: "",
-            username: "",
-            password: ""
-        });
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user).then(() => this.props.history.push("/")).fail(() => {
+            this.setState({ errors: this.props.errors  })
+        })
+    //     this.setState({ email: "", username: "", password: "" });
     }   
 
     update(field) {
@@ -32,7 +31,7 @@ class SessionForm extends React.Component {
     }   
 
     render () {
-
+    
         let link;
         if (this.props.formType === 'signup')
         link = (
@@ -44,19 +43,27 @@ class SessionForm extends React.Component {
             <Link to="/signup">Don't have an account? Sign up now!</Link>
         )
 
-        const errors = this.props.errors.map((error) => {
-            <ul>
-                <li>
+        const emailInput = (this.props.formType === "login") ? null : (
+            <label>Email:
+                <input type="text" onChange={this.update("email")} value={this.state.email} />
+            </label>
+        );
+
+        const errors = this.state.errors.map((error, idx) => {
+            return (
+                <li key={idx}>
                     {error}
                 </li>
-            </ul>
+            )
         })
         return (
             <div>
                 {link}
+                {errors}
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email:
-                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
+                    <br/>
+                    <label>
+                        {emailInput}
                     </label>
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.update('username')}/>
@@ -66,7 +73,6 @@ class SessionForm extends React.Component {
                     </label>
                         <input type="submit" value={this.props.formType}/>
                 </form>
-                {errors}
             </div>
         )
     }
