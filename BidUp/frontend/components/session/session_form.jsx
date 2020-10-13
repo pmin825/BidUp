@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -29,14 +29,14 @@ class SessionForm extends React.Component {
     render () {
 
         let link;
-        if (this.props.formType === 'login')
-        link = (
-            <Link to="/login">Login</Link>
-        )
-
         if (this.props.formType === 'signup')
         link = (
-            <Link to="/"></Link>
+            <Link to="/login">Already have an account? Login now!</Link>
+        )
+
+        if (this.props.formType === 'login')
+        link = (
+            <Link to="/signup">Don't have an account? Sign up now!</Link>
         )
 
         const errors = this.props.errors.map((error) => {
@@ -50,6 +50,9 @@ class SessionForm extends React.Component {
             <div>
                 {link}
                 <form onSubmit={this.handleSubmit}>
+                    <label>Email:
+                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
+                    </label>
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.update('username')}/>
                     </label>

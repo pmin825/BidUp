@@ -11,9 +11,9 @@ const App = () => (
   <div>
     <header>
         <h1>BidUp LIVE</h1>
-        <GreetingContainer />
+        <Route exact path="/" component={GreetingContainer} />
     </header>
-        <Route path="/login" component={LogformContainer} /> 
+        <Route path="/login" component={LoginFormContainer} /> 
         <Route path="/signup" component={SignupFormContainer} />
   </div>
 );
