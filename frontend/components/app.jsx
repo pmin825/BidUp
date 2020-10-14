@@ -23,10 +23,10 @@ const App = () => (
         <Route exact path="/" component={GreetingContainer} />
 
     </header>
-        {/* <Switch>
+        <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} /> 
             <AuthRoute path="/signup" component={SignupFormContainer} />
-        </Switch> */}
+        </Switch>
   </div>
 );
 

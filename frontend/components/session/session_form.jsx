@@ -73,11 +73,12 @@ class SessionForm extends React.Component {
       let link
         if (this.props.formType === 'signup')
         link = (
-            <Link to="/login">Already have an account? Login</Link>
+            <Link onClick={this.props.closeModal} to="/login">Already have an account? Login</Link>
         )
         if (this.props.formType === 'login')
         link = (
-            <Link to="/signup">Don't have an account? Sign up</Link>
+            <Link onClick={this.props.closeModal} to="/signup">Don't have an account? Sign up</Link>
+            
         );
         
         const emailInput = (this.props.formType === "login") ? null : (
@@ -126,13 +127,13 @@ class SessionForm extends React.Component {
                     <span> {errors} </span>
                     <h1 className="form-name">{formName}</h1>
                     <form className="signin-form-body" onSubmit={this.handleSubmit}>
-                        <label class="form-label">
+                        <label className="form-label">
                             {emailInput}
                         </label>
-                        <label class="form-label">USERNAME
+                        <label className="form-label">USERNAME
                             <input className="signin-input" type="text" value={this.state.username} onChange={this.update('username')}/>
                         </label>
-                        <label class="form-label">PASSWORD 
+                        <label className="form-label">PASSWORD 
                             <input className="signin-input" type="password" value={this.state.password} onChange={this.update('password')}/>
                         </label>
                             <input className="signin-button" type="submit" value={this.props.formType}/>
