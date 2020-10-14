@@ -19,7 +19,7 @@ const App = () => (
     <Modal />
     <header>
         <Link to="/" className="header-link"></Link>
-        <h1>BidUp</h1>
+        {/* <h1>BidUp</h1> */}
         <Route path="/" component={GreetingContainer} />
 
     </header>

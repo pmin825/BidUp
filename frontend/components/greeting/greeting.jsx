@@ -14,8 +14,8 @@ const Greeting = (props) => {
     if (props.currentUser ) {
         welcome = (
         <div className="welcome-message">
-            <p>Hello {props.currentUser.username}!</p>
-            <button onClick={props.logout}>Logout</button>
+            <p className="welcome-name">{props.currentUser.username}</p>
+            <button className="logout-button" onClick={props.logout}>Logout</button>
         </div>
       );
     }
@@ -31,7 +31,7 @@ const Greeting = (props) => {
     return (
       <nav className="nav-container">
         <nav className="nav-bar">
-          <p className="logo-name">BidUp</p>
+          <Link className="logo-name" to="/">BidUp</Link>
           {props.currentUser ? welcome : sessionLinks}    
         </nav>
       </nav>
