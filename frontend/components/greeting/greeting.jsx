@@ -14,7 +14,7 @@ const Greeting = (props) => {
     if (props.currentUser ) {
         welcome = (
         <div>
-            <p>Hello {props.currentUser.username}</p>
+            <p>Hello {props.currentUser.username}!</p>
             <button onClick={props.logout}>Logout</button>
         </div>
       );
