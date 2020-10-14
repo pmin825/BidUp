@@ -70,16 +70,35 @@ class SessionForm extends React.Component {
 
     render () {
     
+      let link
+        if (this.props.formType === 'signup')
+        link = (
+            <Link to="/login">Already have an account? Login</Link>
+        )
+        if (this.props.formType === 'login')
+        link = (
+            <Link to="/signup">Don't have an account? Sign up</Link>
+        );
+        
         const emailInput = (this.props.formType === "login") ? null : (
                 <label>EMAIL
                     <br/>
-                    <input className="signin-input" type="email" onChange={this.update("email")} value={this.state.email} />
+                    <input 
+                        className="signin-input" 
+                        type="email"
+                        onChange={this.update("email")} 
+                        value={this.state.email} 
+                    />
                 </label>
         );
 
         const demoButton = (this.props.formType === 'signup') ? null : (
             <div>
-                <button className="signin-button" onClick={this.demoLogin}>demo login</button>
+                <button 
+                    className="signin-button" 
+                    onClick={this.demoLogin}>
+                    demo login 
+                </button>
             </div>
         );
 
@@ -119,6 +138,8 @@ class SessionForm extends React.Component {
                             <input className="signin-button" type="submit" value={this.props.formType}/>
                         <span>{demoButton}</span>
                     </form>
+                        <br/>
+                        <span>{link}</span>
                 </div>
             </div>
         )
