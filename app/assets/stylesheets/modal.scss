@@ -26,9 +26,10 @@
 
 .signin-container {
   width: 300px;
-  height: 420px;
+  height: 500px;
   margin: auto;
   position: relative;
+  margin-top: 70px;
 }
 
 .signin-form-body {
@@ -46,6 +47,7 @@
   background-color: #00ab80;
   color: white;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 .signin-input {
@@ -85,4 +87,8 @@
 .signin-link {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+input:focus {
+  border-color: green;
 }

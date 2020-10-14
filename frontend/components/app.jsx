@@ -20,7 +20,7 @@ const App = () => (
     <header>
         <Link to="/" className="header-link"></Link>
         <h1>BidUp</h1>
-        <Route exact path="/" component={GreetingContainer} />
+        <Route path="/" component={GreetingContainer} />
 
     </header>
         <Switch>

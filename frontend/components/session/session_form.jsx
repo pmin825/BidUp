@@ -84,7 +84,7 @@ class SessionForm extends React.Component {
         const emailInput = (this.props.formType === "login") ? null : (
                 <label>EMAIL
                     <br/>
-                    <input 
+                    <input autoFocus
                         className="signin-input" 
                         type="email"
                         onChange={this.update("email")} 
@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
                 <button 
                     className="signin-button" 
                     onClick={this.demoLogin}>
-                    demo login 
+                    Demo User 
                 </button>
             </div>
         );
@@ -121,25 +121,29 @@ class SessionForm extends React.Component {
             </div>
         )
 
+        const formButtonName = (this.props.formType === 'login') ? ('Log in') : ('Sign up')
+
         return (
             <div className="signin-container">
                 <div className="signin-form">
-                    <span> {errors} </span>
+                    
                     <h1 className="form-name">{formName}</h1>
                     <form className="signin-form-body" onSubmit={this.handleSubmit}>
                         <label className="form-label">
                             {emailInput}
                         </label>
                         <label className="form-label">USERNAME
-                            <input className="signin-input" type="text" value={this.state.username} onChange={this.update('username')}/>
+                            <input autoFocus className="signin-input" type="text" value={this.state.username} onChange={this.update('username')}/>
                         </label>
                         <label className="form-label">PASSWORD 
-                            <input className="signin-input" type="password" value={this.state.password} onChange={this.update('password')}/>
+                            <input autoFocus className="signin-input" type="password" value={this.state.password} onChange={this.update('password')}/>
                         </label>
-                            <input className="signin-button" type="submit" value={this.props.formType}/>
+                            <input className="signin-button" type="submit" value={formButtonName}/>
                         <span>{demoButton}</span>
-                    </form>
                         <br/>
+                        <span> {errors} </span>
+                    </form>
+                        <br/><br/>
                         <span>{link}</span>
                 </div>
             </div>

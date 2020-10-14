@@ -5,15 +5,15 @@ const Greeting = (props) => {
 
     const sessionLinks = (
     <nav className="login-signup">
-      <button onClick={() => props.openModal('login')}>Login</button>
-      <button onClick={() => props.openModal('signup')}>Signup</button>
+      <button className="session-button" onClick={() => props.openModal('login')}>Log in</button>
+      <button className="session-button" onClick={() => props.openModal('signup')}>Sign up</button>
     </nav>
     );
 
     let welcome; 
     if (props.currentUser ) {
         welcome = (
-        <div>
+        <div className="welcome-message">
             <p>Hello {props.currentUser.username}!</p>
             <button onClick={props.logout}>Logout</button>
         </div>
@@ -29,8 +29,14 @@ const Greeting = (props) => {
     );
     
     return (
-        props.currentUser ? welcome : sessionLinks
+      <nav className="nav-container">
+        <nav className="nav-bar">
+          <p className="logo-name">BidUp</p>
+          {props.currentUser ? welcome : sessionLinks}    
+        </nav>
+      </nav>
     )
+
 }
 
 export default Greeting; 
