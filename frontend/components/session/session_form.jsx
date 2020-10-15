@@ -73,11 +73,15 @@ class SessionForm extends React.Component {
       let link
         if (this.props.formType === 'signup')
         link = (
-            <Link onClick={this.props.closeModal} to="/login">Already have an account? Login</Link>
+            <div>
+            <Link className="signin-link" onClick={this.props.closeModal} to="/login">Already have an account? Login</Link>
+            </div>
         )
         if (this.props.formType === 'login')
         link = (
-            <Link onClick={this.props.closeModal} to="/signup">Don't have an account? Sign up</Link>
+            <div>
+            <Link className="signin-link" onClick={this.props.closeModal} to="/signup">Don't have an account? Sign up</Link>
+            </div>
             
         );
         
@@ -105,7 +109,7 @@ class SessionForm extends React.Component {
 
         const errors = this.state.errors.map((error, idx) => {
             return (
-                <li key={idx}>
+                <li className="errors" key={idx}>
                     {error}
                 </li>
             )
@@ -128,22 +132,30 @@ class SessionForm extends React.Component {
                 <div className="signin-form">
                     
                     <h1 className="form-name">{formName}</h1>
+                        <p className="bid-title">BidUp</p>
                     <form className="signin-form-body" onSubmit={this.handleSubmit}>
                         <label className="form-label">
                             {emailInput}
                         </label>
                         <label className="form-label">USERNAME
-                            <input autoFocus className="signin-input" type="text" value={this.state.username} onChange={this.update('username')}/>
+                            <input autoFocus className="signin-input" 
+                                type="text" 
+                                value={this.state.username} 
+                                onChange={this.update('username')}
+                            />
                         </label>
                         <label className="form-label">PASSWORD 
-                            <input autoFocus className="signin-input" type="password" value={this.state.password} onChange={this.update('password')}/>
+                            <input autoFocus className="signin-input" 
+                                type="password" 
+                                value={this.state.password} 
+                                onChange={this.update('password')}
+                            />
                         </label>
                             <input className="signin-button" type="submit" value={formButtonName}/>
                         <span>{demoButton}</span>
-                        <br/>
                         <span> {errors} </span>
                     </form>
-                        <br/><br/>
+                        <br/>
                         <span>{link}</span>
                 </div>
             </div>

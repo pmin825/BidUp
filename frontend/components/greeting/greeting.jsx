@@ -5,6 +5,9 @@ const Greeting = (props) => {
 
     const sessionLinks = (
     <nav className="login-signup">
+      <i className="fas fa-camera"></i>
+      <button className="session-button">Sell</button>
+      <button className="session-button">About</button>
       <button className="session-button" onClick={() => props.openModal('login')}>Log in</button>
       <button className="session-button" onClick={() => props.openModal('signup')}>Sign up</button>
     </nav>
@@ -29,12 +32,27 @@ const Greeting = (props) => {
     );
     
     return (
-      <nav className="nav-container">
-        <nav className="nav-bar">
-          <Link className="logo-name" to="/">BidUp</Link>
-          {props.currentUser ? welcome : sessionLinks}    
+      <div>
+        <nav className="nav-container">
+          <nav className="nav-bar">
+            <Link className="logo-name" to="/">BidUp</Link>
+            <section className="nav-mid">
+              <div className='search-container'>
+                <i className="fa fa-search">
+                <input className="search-input-one" type="text" placeholder="Search BidUp" name="search" />
+                </i>
+              </div>
+              <div className='search-container'>
+                <i class="fas fa-map-marker-alt">
+                <input className="search-input-two" type="text" placeholder="Nearby" name="search" />
+                </i>
+                <button className="go-button">GO</button>
+              </div>
+            </section>
+            {props.currentUser ? welcome : sessionLinks}    
+          </nav>
         </nav>
-      </nav>
+      </div>
     )
 
 }
