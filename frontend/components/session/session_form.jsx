@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(() => {
             this.props.closeModal()
-            // this.props.history.push("/")
         }).fail(() => {
             this.setState({ errors: this.props.errors  })
         })
@@ -40,7 +39,7 @@ class SessionForm extends React.Component {
     
         if (this.state.username !== demo.username) {
             const inputUsername = setInterval(() => {
-                if(this.state.username !== demo.username) {
+                if (this.state.username !== demo.username) {
                     const temp = demo.username.slice(0, this.state.username.length + 1);
                     this.setState({username: temp})
                 } else {
@@ -73,16 +72,11 @@ class SessionForm extends React.Component {
       let link
         if (this.props.formType === 'signup')
         link = (
-            <div>
-            <Link className="signin-link" onClick={this.props.closeModal} to="/login">Already have an account? Login</Link>
-            </div>
+            this.props.otherForm
         )
         if (this.props.formType === 'login')
         link = (
-            <div>
-            <Link className="signin-link" onClick={this.props.closeModal} to="/signup">Don't have an account? Sign up</Link>
-            </div>
-            
+            this.props.otherForm
         );
         
         const emailInput = (this.props.formType === "login") ? null : (
@@ -124,6 +118,7 @@ class SessionForm extends React.Component {
                 Sign up 
             </div>
         )
+
 
         const formButtonName = (this.props.formType === 'login') ? ('Log in') : ('Sign up')
 
