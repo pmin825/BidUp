@@ -13,11 +13,11 @@
     align-items: center;
     margin-top: 70px;
     // margin-bottom: 40px;
-    border-bottom: solid white .25px;
+    border-bottom: solid lightgray .25px;
     // padding-left: 200px;
     // padding-right: 200px;
     // width: 56%;
-    width: 60%;
+    width: 80%;
 }
 
 .footer-title {
@@ -48,3 +48,9 @@
     display: flex;
     justify-content: center;
 }
+
+.structure {
+    display: flex;
+}
+
+

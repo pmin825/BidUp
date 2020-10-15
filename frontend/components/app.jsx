@@ -5,6 +5,7 @@ import LoginFormContainer from "./session/login_form_container"
 import {AuthRoute} from "../util/route_util";
 import Modal from './modal/modal';
 import { Provider } from 'react-redux';
+import footerLinks from './footer_links';
 import {
   Route,
   Redirect,
@@ -15,17 +16,20 @@ import {
 
 
 const App = () => (
-  <div>
+  <div className="structure">
     <Modal />
     <header>
         <Link to="/" className="header-link"></Link>
         <Route path="/" component={GreetingContainer} />
     </header>
-        <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} /> 
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Redirect to="/"></Redirect>
-        </Switch>
+    <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} /> 
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <Redirect to="/"></Redirect>
+    </Switch>
+    <footer>
+      <Route path="/" component={footerLinks} />
+    </footer>
   </div>
 );
 
