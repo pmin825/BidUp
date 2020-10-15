@@ -138,10 +138,18 @@ class SessionForm extends React.Component {
                             {emailInput}
                         </label>
                         <label className="form-label">USERNAME
-                            <input autoFocus className="signin-input" type="text" value={this.state.username} onChange={this.update('username')}/>
+                            <input autoFocus className="signin-input" 
+                                type="text" 
+                                value={this.state.username} 
+                                onChange={this.update('username')}
+                            />
                         </label>
                         <label className="form-label">PASSWORD 
-                            <input autoFocus className="signin-input" type="password" value={this.state.password} onChange={this.update('password')}/>
+                            <input autoFocus className="signin-input" 
+                                type="password" 
+                                value={this.state.password} 
+                                onChange={this.update('password')}
+                            />
                         </label>
                             <input className="signin-button" type="submit" value={formButtonName}/>
                         <span>{demoButton}</span>

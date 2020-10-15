@@ -19,8 +19,7 @@ const App = () => (
     <Modal />
     <header>
         <Link to="/" className="header-link"></Link>
-        <Route exact path="/" component={GreetingContainer} />
-
+        <Route path="/" component={GreetingContainer} />
     </header>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} /> 
