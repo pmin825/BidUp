@@ -19,13 +19,13 @@ const App = () => (
     <Modal />
     <header>
         <Link to="/" className="header-link"></Link>
-        {/* <h1>BidUp</h1> */}
-        <Route path="/" component={GreetingContainer} />
+        <Route exact path="/" component={GreetingContainer} />
 
     </header>
         <Switch>
-            <AuthRoute path="/login" component={LoginFormContainer} /> 
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} /> 
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Redirect to="/"></Redirect>
         </Switch>
   </div>
 );
