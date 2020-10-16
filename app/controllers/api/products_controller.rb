@@ -3,8 +3,8 @@ class Api::ProductsController < ApplicationController
     def index 
         @products = Product.all
         render :index 
-    else 
-        render json: @products.errors.full_messages, status: 
+    else
+        render json: ["Can't find your product"]
     end
 
     def show
