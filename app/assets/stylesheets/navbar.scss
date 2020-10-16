@@ -94,6 +94,8 @@
     margin-left: 10px;
     margin-right: 5px;
     border: none;
+    outline-color: #ffffff;
+    padding-left: 15px;
 }
 
 .search-input-two {
@@ -102,6 +104,8 @@
     background-color: #097a69;
     margin-left: 10px;
     border: none;
+    outline-color: #ffffff;
+    padding-left: 15px;
 }
 
 .fa.fa-search {
@@ -131,11 +135,13 @@
     font-family: Lato,sans-serif;
     border-bottom-left-radius: .35rem;
     border-top-left-radius: .35rem;
+    padding-left: 15px;
 }
 
 .search-input-two[type=text] {
     color: white;
     font-family: Lato,sans-serif;
+    padding-left: 15px;
 }
 
 
@@ -143,7 +149,7 @@
     color: #ffffff;
     font-size: 14px;
     font-family: Lato,sans-serif;
-    padding: 15px;
+    // padding: 10px;
 }
 
 .logout-button {
