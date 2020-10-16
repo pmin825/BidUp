@@ -21,8 +21,8 @@ const App = () => (
     <Link to="/" className="header-link"></Link>
     {/* <Route path="/" component={GreetingContainer} /> */}
     <Switch>
-        {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> 
-        <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+        <AuthRoute exact path="/login" component={LoginFormContainer} /> 
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={GreetingContainer} />
         <Redirect to="/"></Redirect>
     </Switch>
