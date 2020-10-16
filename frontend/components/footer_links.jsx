@@ -7,8 +7,8 @@ const footerLinks = () => {
             <footer className="footer-nav">
               <div className="footer-title">BidUp</div>
                 <ul className="footer-links">
-                  <li>GitHub</li>
-                  <li>LinkedIn</li>
+                  <li><i class="fab fa-github"></i></li>
+                  <li><i class="fab fa-linkedin"></i></li>
                 </ul>
             </footer>
           </div>
