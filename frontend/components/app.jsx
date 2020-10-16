@@ -18,14 +18,13 @@ import {
 const App = () => (
   <div className="structure">
     <Modal />
-    <header>
-        <Link to="/" className="header-link"></Link>
-        <Route path="/" component={GreetingContainer} />
-    </header>
+    <Link to="/" className="header-link"></Link>
+    {/* <Route path="/" component={GreetingContainer} /> */}
     <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} /> 
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <Redirect to="/"></Redirect>
+        <Route exact path="/" component={GreetingContainer} />
+        <Redirect to="/"></Redirect>
     </Switch>
     <footer>
       <Route path="/" component={footerLinks} />
