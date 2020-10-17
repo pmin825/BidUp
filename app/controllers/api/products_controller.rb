@@ -4,7 +4,7 @@ class Api::ProductsController < ApplicationController
         @products = Product.all
         render :index 
     else
-        render json: ["Can't find your product"]
+        # render json: ["Can't find your product"]
     end
 
     def show

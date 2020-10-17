@@ -19,27 +19,27 @@ const removeProduct = (productId) => ({
     productId
 })
 
-export const receiveProducts = () => dispatch => {
-    ProductAPIUtil.fetchProducts() 
+export const fetchProducts = () => dispatch => {
+    return ProductAPIUtil.fetchProducts() 
         .then(payload => dispatch(receiveProducts(payload)))
 }
 
-export const receiveProduct = (productId) => dispatch => {
-    ProductAPIUtil.fetchProduct(productId) 
+export const fetchProduct = (productId) => dispatch => {
+    return ProductAPIUtil.fetchProduct(productId) 
         .then(payload => dispatch(receiveProduct(payload)))
 }
 
-export const createProduct = (product) => dispatch => (
-    ProductAPIUtil.createProduct(product)
+export const createProduct = (product) => dispatch => {
+    return ProductAPIUtil.createProduct(product)
         .then(payload => dispatch(receiveProduct(payload)))
-)
+}
 
-export const updateProduct = (product) => dispatch => (
-    ProductAPIUtil.updateProduct(product) 
+export const updateProduct = (product) => dispatch => {
+    return ProductAPIUtil.updateProduct(product) 
         .then(payload => dispatch(receiveProduct(payload)))
-)
+}
 
-export const deleteProduct = (productId) => dispatch => (
-    ProductAPIUtil.deleteProduct(productId)
+export const deleteProduct = (productId) => dispatch => {
+    return ProductAPIUtil.deleteProduct(productId)
         .then(() => dispatch(removeProduct(productId)))
-)
+}

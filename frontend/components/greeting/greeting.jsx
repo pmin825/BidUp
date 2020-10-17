@@ -45,7 +45,7 @@ const Greeting = (props) => {
               </div>
 
               <div className='search-container'>
-                <i class="fas fa-map-marker-alt">
+                <i className="fas fa-map-marker-alt">
                   <input className="search-input-two" type="text" placeholder="Nearby" name="search" />
                 </i>
                   <button className="go-button">GO</button>

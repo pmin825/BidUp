@@ -1,36 +1,36 @@
-export const fetchProducts = () => (
-    $.ajax({
+export const fetchProducts = () => {
+    return $.ajax({
         url: '/api/products',
         method: 'GET'
     })
-)
+}
 
-export const fetchProduct = (productId) => (
-    $.ajax({
+export const fetchProduct = (productId) => {
+    return $.ajax({
         url: `/api/products/${productId}`,
         method: 'GET'
     })
-)
+}
 
-export const createProduct = (product) => (
-    $.ajax({
+export const createProduct = (product) => {
+    return $.ajax({
         url: '/api/products',
         method: 'POST',
         data: { product }
     })
-)
+}
 
-export const updateProduct = (product) => (
-    $.ajax({
-        method: "PATCH",
+export const updateProduct = (product) => {
+    return $.ajax({
         url: `/api/products/${product.id}`,
+        method: "PATCH",
         data: { product }
     })
-)
+}
 
-export const deleteProduct = (productId) => (
-    $.ajax({
-        method: "DELETE",
-        url: `/api/products/${productId}`
+export const deleteProduct = (productId) => {
+    return $.ajax({
+        url: `/api/products/${productId}`,
+        method: "DELETE"
     })
-)
+}
