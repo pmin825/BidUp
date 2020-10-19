@@ -13,9 +13,6 @@
     outline: none;
     cursor: pointer;
 }
-// .nav-container {
-
-// }
 
 .nav-bar {
     // background-color: linear-gradient(90deg, #00ab80, #00a980 50%, #026);
@@ -29,6 +26,13 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+// .nav-container {
+//     overflow: hidden;
+//     width: 100vw;
+//     height: 70px;
+//     margin: auto;
+// }
 
 .nav-mid {
     display: flex;
@@ -44,6 +48,7 @@
     margin-left: 50px;
     margin-right: 20px;
     text-decoration: none;
+
 }
 
 .welcome-name {
@@ -161,5 +166,6 @@
     font-size: 18px;
     cursor: pointer;
 }
+
 
 

@@ -35,9 +35,10 @@ const Greeting = (props) => {
       <div>
         <nav className="nav-container">
           <nav className="nav-bar">
-            <Link className="logo-name" to="/">BidUp</Link>
+            <div className="nav-start">
+              <Link className="logo-name" to="/">BidUp</Link>
+            </div>
             <section className="nav-mid">
-
               <div className='search-container'>
                 <i className="fa fa-search">
                   <input className="search-input-one" type="text" placeholder="Search BidUp" name="search" />
@@ -50,8 +51,8 @@ const Greeting = (props) => {
                 </i>
                   <button className="go-button">GO</button>
               </div>
-
             </section>
+
             <nav className="login-signup">
               <i className="fas fa-camera"></i>
               <button className="session-button">Sell</button>
