@@ -2,7 +2,7 @@ import React from "react";
 import GreetingContainer from "./greeting/greeting_container";
 import SignupFormContainer from "./session/signup_form_container"
 import LoginFormContainer from "./session/login_form_container"
-import {AuthRoute} from "../util/route_util";
+import {AuthRoute, ProtectedRoute} from "../util/route_util";
 import Modal from './modal/modal';
 import { Provider } from 'react-redux';
 import {FooterLinks} from './footer_links';
@@ -28,7 +28,7 @@ const App = () => (
       <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} /> 
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
-          <Route exact path='/products/new' component={CreateProductContainer} />
+          <ProtectedRoute exact path='/products/new' component={CreateProductContainer} />
           <Route exact path='/products/:productId' component={ProductShowContainer} />
           <Route exact path="/" component={ProductIndexContainer} />
           <Redirect to="/"></Redirect>

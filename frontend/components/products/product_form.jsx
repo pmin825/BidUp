@@ -53,9 +53,9 @@ class ProductForm extends React.Component {
                 <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
                     <h1>Sell your product</h1>
                     <div className="product-form-section">
-                        <label>Upload your photo here:
+                        <div>Upload your photo here:
                             <input type="file" onChange={this.handleFile}/>
-                        </label>
+                        </div>
                         <label>Product name:
                             <input type="text" value={this.state.name} onChange={this.update('name')}/>
                         </label>

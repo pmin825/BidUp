@@ -12,13 +12,11 @@ class ProductIndex extends React.Component {
 
     render(){
 
-        const col1 = [];
-        const col2 = [];
-        const col3 = [];
-        const col4 = [];
-        const col5 = [];
-        const col6 = [];
-        const col7 = [];
+        let col1 = [];
+        let col2 = [];
+        let col3 = [];
+        let col4 = [];
+        let col5 = [];
         let i = 1;
 
         this.props.products.forEach((product) => {
@@ -26,7 +24,7 @@ class ProductIndex extends React.Component {
                 col1.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 2) {
-                col2.push(<ProductIndexItem  key={product.id} product={product}/>);
+                col2.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 3) {
                 col3.push(<ProductIndexItem key={product.id} product={product}/>);
@@ -37,10 +35,14 @@ class ProductIndex extends React.Component {
             if (i % 5 === 0) {
                 col5.push(<ProductIndexItem key={product.id} product={product}/>);
             }
-
-            
             i++;
         });
+
+        col1 = col1.reverse();
+        col2 = col2.reverse();
+        col3 = col3.reverse();
+        col4 = col4.reverse();
+        col5 = col5.reverse();
 
         return(
             <section>
