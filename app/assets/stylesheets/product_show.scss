@@ -97,8 +97,48 @@
 }
 
 .show-location {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
+
 }
 
+.show-location p:nth-child(2) {
+    font-size: 16px;
+    font-family: Lato,sans-serif;
+    color: #4a4a4a;
+    font-weight: 400;
+}
+
+.show-location p:nth-child(1) {
+    color: #00ab80;
+    font-size: 16px;
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+}
+
+.show-location i {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #00ab80;
+}
+
+.show-border-line {
+    margin-top: 30px;
+    border-bottom: solid #e4e4e4 1px;
+}
+
+h4 {
+    margin-top: 25px;
+    font-family: Lato,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+.show-prod-desc p{
+    margin-top: 25px;
+    font-family: Lato,sans-serif;
+    color: #4a4a4a;
+    font-weight: 400;
+}
 

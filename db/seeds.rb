@@ -22,19 +22,19 @@ user7 = User.create!(email: 'taylor@aa.io', username: 'taylor', password: 'passw
 
 
 
-product1 = Product.create!(name: 'Skateboard', price: 30, description: 'Lightly used, in good condition skateboard.', location: 'San Francisco', seller_id: user1.id)
-product2 = Product.create!(name: 'Black hat', price: 15, description: 'Just a black hat.', location: 'San Francisco', seller_id: user2.id)
-product3 = Product.create!(name: 'Laptop bag', price: 40, description: 'Brown luxury leather laptop bag.', location: 'Los Angeles', seller_id: user3.id)
-product4 = Product.create!(name: 'Sunglasses', price: 20, description: 'Ray Ban sunglasses.', location: 'Los Angeles', seller_id: user4.id)
-product5 = Product.create!(name: 'Desktop monitor', price: 10, description: 'HP 29" desktop monitor.', location: 'San Francisco', seller_id: user5.id)
-product6 = Product.create!(name: 'Bluetooth speaker', price: 25, description: 'Lightweight and portable, bluetooth enabled.', location: 'Los Angeles', seller_id: user6.id)
-product7 = Product.create!(name: 'Wallet', price: 140, description: 'Luxury LV wallet, bi-fold style.', location: 'San Francisco', seller_id: user7.id)
-product8 = Product.create!(name: 'Airpods', price: 60, description: 'First gen airpods.', location: 'San Francisco', seller_id: user1.id)
-product9 = Product.create!(name: 'Cat tree', price: 50, description: 'Six-level cat tree.', location: 'San Francisco', seller_id: user2.id)
-product10 = Product.create!(name: 'Mechanical Keyboard', price: 100, description: 'K2 mechnical keyboard. RGB, wireless, gateron blue switches.', location: 'Los Angeles', seller_id: user3.id)
-product11 = Product.create!(name: 'Paralettes', price: 50, description: 'Black Lebert paralettes. Foam grips, sold as pair.', location: 'Los Angeles', seller_id: user4.id)
-product12 = Product.create!(name: 'Sennheiser headphones', price: 100, description: 'Sennheiser HD 380 Pro. Great for mixing or just enjoying music.', location: 'San Francisco', seller_id: user5.id)
-product13 = Product.create!(name: 'Wireless Speaker', price: 15, description: "Black and red Victsing wireless/bluetooth speaker. Charges via micro usb.", location: 'Los Angeles', seller_id: user6.id)
+product1 = Product.create!(name: 'Skateboard', price: 30, description: 'Lightly used, in good condition skateboard.', location: 'San Francisco, CA', seller_id: user1.id)
+product2 = Product.create!(name: 'Black hat', price: 15, description: 'Just a black hat.', location: 'San Francisco, CA', seller_id: user2.id)
+product3 = Product.create!(name: 'Laptop bag', price: 40, description: 'Brown luxury leather laptop bag.', location: 'Los Angeles, CA', seller_id: user3.id)
+product4 = Product.create!(name: 'Sunglasses', price: 20, description: 'Ray Ban sunglasses.', location: 'Los Angeles, CA', seller_id: user4.id)
+product5 = Product.create!(name: 'Desktop monitor', price: 10, description: 'HP 29" desktop monitor.', location: 'San Francisco, CA', seller_id: user5.id)
+product6 = Product.create!(name: 'Bluetooth speaker', price: 25, description: 'Lightweight and portable, bluetooth enabled.', location: 'Los Angeles, CA', seller_id: user6.id)
+product7 = Product.create!(name: 'Wallet', price: 140, description: 'Luxury LV wallet, bi-fold style.', location: 'San Francisco, CA', seller_id: user7.id)
+product8 = Product.create!(name: 'Airpods', price: 60, description: 'First gen airpods.', location: 'San Francisco, CA', seller_id: user1.id)
+product9 = Product.create!(name: 'Cat tree', price: 50, description: 'Six-level cat tree.', location: 'San Francisco, CA', seller_id: user2.id)
+product10 = Product.create!(name: 'Mechanical Keyboard', price: 100, description: 'K2 mechnical keyboard. RGB, wireless, gateron blue switches.', location: 'Los Angeles, CA', seller_id: user3.id)
+product11 = Product.create!(name: 'Paralettes', price: 50, description: 'Black Lebert paralettes. Foam grips, sold as pair.', location: 'Los Angeles, CA', seller_id: user4.id)
+product12 = Product.create!(name: 'Sennheiser headphones', price: 100, description: 'Sennheiser HD 380 Pro. Great for mixing or just enjoying music.', location: 'San Francisco, CA', seller_id: user5.id)
+product13 = Product.create!(name: 'Wireless Speaker', price: 15, description: "Black and red Victsing wireless/bluetooth speaker. Charges via micro usb.", location: 'Los Angeles, CA', seller_id: user6.id)
 
 
 file1 = open('https://bidup-seed.s3-us-west-1.amazonaws.com/skateboard.jpg')

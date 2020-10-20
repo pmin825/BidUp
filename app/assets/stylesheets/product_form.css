@@ -1,0 +1,43 @@
+ .product-form-section {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    width: 80vw;
+    /* justify-content: space-evenly; */
+} 
+
+.prod-form-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.prod-form-desc textarea {
+    height: 200px;
+    resize: none;
+    font-size: 28px;
+}
+
+.product-form-wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: Lato,sans-serif;
+    font-weight: 900;
+    color: #00ab80;
+}
+
+.product-form-section label {
+    font-family: Lato,sans-serif;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+label input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+ .product-form-section label {
+    display: flex;
+    flex-direction: column;
+}

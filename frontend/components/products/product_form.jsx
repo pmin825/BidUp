@@ -50,14 +50,26 @@ class ProductForm extends React.Component {
 
         return(
             <div className="product-form-container">
-                <form onSubmit={this.handleSubmit}>
+                <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
                     <h1>Sell your product</h1>
-                    <input type="file" onChange={this.handleFile}/>
-                    <input type="text" value={this.state.name} onChange={this.update('name')}/>
-                    <input type="text" value={this.state.price} onChange={this.update('price')}/>
-                    <input type="text" value={this.state.description} onChange={this.update('description')}/>
-                    <input type="text" value={this.state.location} onChange={this.update('location')}/>
-                    <button type="submit"></button>
+                    <div className="product-form-section">
+                        <label>Upload your photo here:
+                            <input type="file" onChange={this.handleFile}/>
+                        </label>
+                        <label>Product name:
+                            <input type="text" value={this.state.name} onChange={this.update('name')}/>
+                        </label>
+                        <label>Price wanted:
+                            <input type="text" value={this.state.price} onChange={this.update('price')}/>
+                        </label>
+                        <label>Location:
+                            <input type="text" value={this.state.location} onChange={this.update('location')}/>
+                        </label>
+                        <label className="prod-form-desc">Enter a description about your product here:
+                            <textarea value={this.state.description} onChange={this.update('description')}/>
+                        </label>
+                        <button type="submit">Create your product listing now!</button>
+                    </div>
                 </form>
             </div>
         )

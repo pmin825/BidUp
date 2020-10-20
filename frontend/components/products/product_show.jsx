@@ -46,6 +46,12 @@ class ProductShow extends React.Component {
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Local pickup</p>
                         </div>
+                        <div className="show-border-line">
+                        </div>
+                        <h4>Description</h4>
+                        <div className="show-prod-desc">
+                            <p>{this.props.product.description}</p>
+                        </div>
                     </div>
                 </div>
             </div>
