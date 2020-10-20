@@ -11,6 +11,22 @@ class ProductForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    componentDidMount(){
+        if (this.props.formType === 'update') {
+            this.props.fetchProduct(this.props.match.params.productId);
+        }
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.props.formType === 'update') {
+            if (prevProps.product.id != this.props.match.params.productId) {
+                this.props.fetchProduct(this.props.match.params.productId).then(() => {
+                    this.setState(this.props.product)
+                })
+            }
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -46,12 +62,18 @@ class ProductForm extends React.Component {
 
     }
 
+    
     render() {
-
+        let message;
+        if (this.props.formType === 'create')
+            message = (<h1>Add a new product listing</h1>)
+        if (this.props.formType === 'update')
+            message = (<h1>Update your product listing</h1>)
+        
         return(
             <div className="product-form-container">
                 <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
-                    <h1>Sell your product</h1>
+                    {message}
                     <div className="product-form-section">
                         <div>Upload your photo here:
                             <input type="file" onChange={this.handleFile}/>

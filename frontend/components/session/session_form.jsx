@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
 
     render () {
     
-      let link
+      let link;
         if (this.props.formType === 'signup')
         link = (
             this.props.otherForm

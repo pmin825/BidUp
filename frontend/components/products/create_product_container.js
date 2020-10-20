@@ -14,6 +14,7 @@ const mapStateToProps = state => {
             seller_id: state.session.id,
             photoFile: null,
         },
+        formType: 'create',
         currentUser: state.session.id
     }
 }
@@ -24,4 +25,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductForm)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductForm);

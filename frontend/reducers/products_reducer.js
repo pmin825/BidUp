@@ -8,8 +8,9 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_PRODUCTS:
             return action.products 
         case RECEIVE_PRODUCT:
-            newState[action.product.id] = action.product;
-            return newState
+            // newState[action.product.id] = action.product;
+            let product = {};
+            return product[action.product.id] = action.product;
         case REMOVE_PRODUCT:
             delete newState[action.productId]
             return action.products

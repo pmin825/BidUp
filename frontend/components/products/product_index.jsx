@@ -10,6 +10,10 @@ class ProductIndex extends React.Component {
         this.props.fetchProducts();
     };
 
+    componentWillUnmount() {
+        this.setState({})
+    }
+
     render(){
 
         let col1 = [];
