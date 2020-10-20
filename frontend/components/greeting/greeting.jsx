@@ -55,7 +55,9 @@ const Greeting = (props) => {
 
             <nav className="login-signup">
               <i className="fas fa-camera"></i>
-              <button className="session-button">Sell</button>
+              <Link to="/products/new">
+                <button className="session-button">Sell</button>
+              </Link>
               <button className="session-button">About</button>
               {props.currentUser ? welcome : sessionLinks}  
             </nav>  

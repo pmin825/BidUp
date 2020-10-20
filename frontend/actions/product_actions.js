@@ -9,10 +9,12 @@ const receiveProducts = (products) => ({
     products
 })
 
-const receiveProduct = (product) => ({
-    type: RECEIVE_PRODUCT,
-    product
-})
+const receiveProduct = (product) => {
+    return {
+        type: RECEIVE_PRODUCT,
+        product
+    }
+}
 
 const removeProduct = (productId) => ({
     type: REMOVE_PRODUCT,
