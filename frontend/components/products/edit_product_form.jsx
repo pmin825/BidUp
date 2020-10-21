@@ -45,9 +45,9 @@ class EditProductForm extends React.Component {
         formData.append('product[photoFile]', this.state.photoFile);
         formData.append('product[id]', productId);
         this.props.updateProduct(formData)
-        //     .then(() => {
-        //         this.props.history.push('/')
-        //     });
+            .then(() => {
+                this.props.history.push('/')
+            });
     }
 
     update(field) {

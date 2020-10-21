@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
     };
 
     let product = state.entities.products || defaultProduct;
-    debugger 
     return {
         product,
         formType: 'update',
