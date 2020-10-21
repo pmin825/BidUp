@@ -63,35 +63,38 @@ class ProductForm extends React.Component {
 
     
     render() {
-        let message;
-        if (this.props.formType === 'create')
-            message = (<h1>Add a new product listing</h1>)
-        if (this.props.formType === 'update')
-            message = (<h1>Update your product listing</h1>)
-        
+ 
         return(
-            <div className="product-form-container">
-                <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
-                    {message}
-                    <div className="product-form-section">
-                        <div>Upload your photo here:
-                            <input type="file" onChange={this.handleFile}/>
+            <div className="plist-container">
+                <div className="form-banner">
+                    <h1>Add a new product listing</h1>
+                </div>
+                <div className="product-form-container2">
+                    <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
+                        <div className="product-form-section">
+                            <div>Choose new photo:
+                                <input type="file" onChange={this.handleFile}/>
+                            </div>
+                            <label>Product name:
+                                <p>Include keywords that buyers would use to search for your item.</p>
+                                <input type="text" value={this.state.name} onChange={this.update('name')}/>
+                            </label>
+                            <label>Price:
+                                <p>Select a starting price for customers to bid on.</p>
+                                <input type="text" value={this.state.price} onChange={this.update('price')}/>
+                            </label>
+                            <label>Location:
+                                <p>Enter your location so local buyers can find you.</p>
+                                <input type="text" value={this.state.location} onChange={this.update('location')}/>
+                            </label>
+                            <label className="prod-form-desc">Description:
+                                <p>Write a description about your product here. The more information the better. </p>
+                                <textarea value={this.state.description} onChange={this.update('description')}/>
+                            </label>
+                            <button type="submit">Update your product listing now!</button>
                         </div>
-                        <label>Product name:
-                            <input type="text" value={this.state.name} onChange={this.update('name')}/>
-                        </label>
-                        <label>Price wanted:
-                            <input type="text" value={this.state.price} onChange={this.update('price')}/>
-                        </label>
-                        <label>Location:
-                            <input type="text" value={this.state.location} onChange={this.update('location')}/>
-                        </label>
-                        <label className="prod-form-desc">Enter a description about your product here:
-                            <textarea value={this.state.description} onChange={this.update('description')}/>
-                        </label>
-                        <button type="submit">Create your product listing now!</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }

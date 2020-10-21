@@ -53,15 +53,18 @@
     border: 1px solid #d8d8d8;
     border-radius: .5rem;
     margin-bottom: 15px;
+
 }
 
 .product-info {
   padding: 10px;
+
 }
 
 .product-info p {
   padding-bottom: 5px;
   font-family: Lato, sans-serif;
+  line-height: 24px;
 }
 
 .product-info p:nth-child(1) {
@@ -69,6 +72,9 @@
   color: #4a4a4a;
   font-weight: 700;
   display: block;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
 }
 
 .product-info p:nth-child(2) {
@@ -76,6 +82,7 @@
   color: #4a4a4a;
   font-weight: 900;
   display: block;
+  
 }
 
 .product-info p:nth-child(3) {
@@ -84,5 +91,10 @@
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
+}
+
+.prod-words {
+  text-decoration: none;
 }
 

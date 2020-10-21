@@ -5,7 +5,7 @@ const ProductIndexItem = (props) => {
     return(
         <div>
             {/* <Link to={`/products/${props.product.id}`}>{props.product.name}</Link> */}
-            <Link to={`/products/${props.product.id}`}>
+            <Link className="prod-words" to={`/products/${props.product.id}`}>
                 <div className="product-image">
                     <img src={props.product.photo_url} />
                     <div className="product-info">

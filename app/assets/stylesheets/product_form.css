@@ -33,14 +33,14 @@
     /* background-color: rgb(255, 199, 95); */
 }
 
-.product-form-wrapper h1 {
+/* .product-form-wrapper h1 {
     font-size: 40px;
     margin-bottom: 40px;
     font-family: Lato,sans-serif;
     font-weight: 900;
     color: #00ab80;
     text-align: center;
-}
+} */
 
 .product-form-section label {
     font-family: Lato,sans-serif;
@@ -84,4 +84,29 @@ label input {
 
 .product-form-container {
     height: 650px;
+}
+
+.form-banner h1 {
+    font-size: 40px;
+    /* margin-bottom: 40px; */
+    font-family: Lato,sans-serif;
+    font-weight: 900;
+    color: #00ab80;
+    text-align: center;
+}
+
+.form-banner {
+    margin-top: 100px;
+}
+
+.plist-container {
+    height: 800px;
+}
+
+.product-form-container2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 150px;
+
 }
