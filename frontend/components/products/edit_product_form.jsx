@@ -12,6 +12,11 @@ class EditProductForm extends React.Component {
     }
 
     componentDidMount(){
+
+        if (this.props.currentUser != this.props.product.seller_id) {
+            this.props.history.push('/')
+        }
+
         if (this.props.formType === 'update') {
             this.props.fetchProduct(this.props.match.params.productId);
         }

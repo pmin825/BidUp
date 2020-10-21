@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchProducts, deleteProduct, unmountProduct } from '../../actions/product_actions';
+import { fetchProducts, deleteProduct } from '../../actions/product_actions';
 import ProductIndex from './product_index';
 
 const mapStateToProps = (state) => {
@@ -11,8 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
-        deleteProduct: (productId) => dispatch(deleteProduct(productId)),
-        unmountProduct: () => dispatch(unmountProduct())
+        deleteProduct: (productId) => dispatch(deleteProduct(productId))
     };
 };
 
