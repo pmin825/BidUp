@@ -50,8 +50,8 @@ class ProductForm extends React.Component {
 
     handleFile(e) {
 
-        const reader = new FileReader();
         const file = e.currentTarget.files[0];
+        const reader = new FileReader();
         reader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: reader.result });
         }
@@ -63,18 +63,19 @@ class ProductForm extends React.Component {
 
     
     render() {
- 
+        const preview = this.state.photoUrl ? <img className="photo-prev" src={this.state.photoUrl}/> : null 
         return(
             <div className="plist-container">
                 <div className="form-banner">
-                    <h1>Add a new product listing</h1>
+                    <h1>Create your product listing</h1>
                 </div>
                 <div className="product-form-container2">
                     <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
                         <div className="product-form-section">
-                            <div>Choose new photo:
+                            <div className="photo-input"><span>Upload a photo:</span>
                                 <input type="file" onChange={this.handleFile}/>
                             </div>
+                            {preview}
                             <label>Product name:
                                 <p>Include keywords that buyers would use to search for your item.</p>
                                 <input type="text" value={this.state.name} onChange={this.update('name')}/>
@@ -91,7 +92,9 @@ class ProductForm extends React.Component {
                                 <p>Write a description about your product here. The more information the better. </p>
                                 <textarea value={this.state.description} onChange={this.update('description')}/>
                             </label>
-                            <button type="submit">Update your product listing now!</button>
+                            <div className="create-update-button">
+                                <button type="submit">Create now!</button>
+                            </div>
                         </div>
                     </form>
                 </div>

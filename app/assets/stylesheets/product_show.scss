@@ -127,6 +127,11 @@
     border-bottom: solid #e4e4e4 1px;
 }
 
+.show-border-line2 {
+    margin-top: 200px;
+    border-bottom: solid #e4e4e4 1px;
+}
+
 h4 {
     margin-top: 25px;
     font-family: Lato,sans-serif;
@@ -142,3 +147,23 @@ h4 {
     font-weight: 400;
 }
 
+.edit-button {
+    background-color: #00ab80;
+    color: #ffffff;
+    outline: none;
+    font-size: 10px;
+    font-family: Lato,sans-serif;
+    border: none;
+    cursor: pointer;
+    border-right: 1px solid white;
+}
+
+.delete-button {
+    background-color: #00ab80;
+    color: #ffffff;
+    outline: none;
+    font-size: 10px;
+    font-family: Lato,sans-serif;
+    border: none;
+    cursor: pointer;
+}

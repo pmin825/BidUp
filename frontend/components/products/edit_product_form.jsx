@@ -72,7 +72,7 @@ class EditProductForm extends React.Component {
     
     render() {
 
-
+        const preview = this.state.photoUrl ? <img className="photo-prev" src={this.state.photoUrl}/> : null 
         return(
             <div className="plist-container">
                 <div className="form-banner">
@@ -81,26 +81,29 @@ class EditProductForm extends React.Component {
                 <div className="product-form-container2">
                     <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
                         <div className="product-form-section">
-                            <div>Choose new photo:
+                            <div className="photo-input"><span>Choose new photo:</span>
                                 <input type="file" onChange={this.handleFile}/>
                             </div>
-                            <label>Product name:
+                            {preview}
+                            <label><span>Product name:</span>
                                 <p>Include keywords that buyers would use to search for your item.</p>
                                 <input type="text" value={this.state.name} onChange={this.update('name')}/>
                             </label>
-                            <label>Price:
+                            <label><span>Price:</span>
                                 <p>Select a starting price for customers to bid on.</p>
                                 <input type="text" value={this.state.price} onChange={this.update('price')}/>
                             </label>
-                            <label>Location:
+                            <label><span>Location:</span>
                                 <p>Enter your location so local buyers can find you.</p>
                                 <input type="text" value={this.state.location} onChange={this.update('location')}/>
                             </label>
-                            <label className="prod-form-desc">Description:
+                            <label className="prod-form-desc"><span>Description:</span>
                                 <p>Write a description about your product here. The more information the better. </p>
                                 <textarea value={this.state.description} onChange={this.update('description')}/>
                             </label>
-                            <button type="submit">Update your product listing now!</button>
+                            <div className="create-update-button">
+                                <button type="submit">Update now!</button>
+                            </div>
                         </div>
                     </form>
                 </div>
