@@ -21,9 +21,17 @@ class ProductShow extends React.Component {
 
         let editButton;
             if (this.props.product.seller_id === this.props.currentUser) {
-                editButton = <div>testing edit button</div>
+                editButton = <Link to={`/products/${this.props.product.id}/edit`}><button className="editButton">EDIT LISTING</button></Link>
             }   else {
                 editButton = null;
+            }
+
+        let deleteButton;
+            if (this.props.product.seller_id === this.props.currentUser) {
+                deleteButton = <button className="deleteButton" onClick={() => this.props.deleteProduct(this.props.product.id).then(() => {
+                    this.props.history.push('/')})}>DELETE LISTING</button>
+            }   else {
+                deleteButton = null;
             }
 
 
@@ -60,6 +68,7 @@ class ProductShow extends React.Component {
                         <div className="show-border-line">
                         </div>
                         {editButton}
+                        {deleteButton}
                         <h4>Description</h4>
                         <div className="show-prod-desc">
                             <p>{this.props.product.description}</p>

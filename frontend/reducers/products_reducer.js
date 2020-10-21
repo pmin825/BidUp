@@ -13,7 +13,7 @@ const productsReducer = (state={}, action) => {
             return product[action.product.id] = action.product;
         case REMOVE_PRODUCT:
             delete newState[action.productId]
-            return action.products
+            return newState;
         default: 
             return state
     }

@@ -16,6 +16,7 @@ import {
 import ProductIndexContainer from './products/product_index_container';
 import ProductShowContainer from './products/product_show_container';
 import CreateProductContainer from './products/create_product_container';
+import EditProductContainer from "./products/edit_product_container"
 
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
           <AuthRoute exact path="/login" component={LoginFormContainer} /> 
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <ProtectedRoute exact path='/products/new' component={CreateProductContainer} />
+          <Route exact path='/products/:productId/edit' component={EditProductContainer} />
           <Route exact path='/products/:productId' component={ProductShowContainer} />
           <Route exact path="/" component={ProductIndexContainer} />
           <Redirect to="/"></Redirect>

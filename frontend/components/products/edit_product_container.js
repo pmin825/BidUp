@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { fetchProduct, updateProduct, deleteProduct } from '../../actions/product_actions';
-import ProductForm from './product_form';
+import EditProductForm from "./edit_product_form"
 
 const mapStateToProps = (state, ownProps) => {
-let defaultProduct =  {
+    let defaultProduct =  {
         name: "", 
         price: "", 
         description: "", 
@@ -12,8 +12,8 @@ let defaultProduct =  {
         photoFile: null,
     };
 
-    let product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
-
+    let product = state.entities.products || defaultProduct;
+    debugger 
     return {
         product,
         formType: 'update',
@@ -29,4 +29,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProductForm);

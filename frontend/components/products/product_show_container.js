@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchProduct, unmountProduct } from '../../actions/product_actions';
+import { fetchProduct, updateProduct, deleteProduct } from '../../actions/product_actions';
 import ProductShow from './product_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
         seller_id: state.session.id,
         photoFile: null,
     };
-    let product = state.entities.products|| defaultProduct 
+
+    let product = state.entities.products || defaultProduct 
     let currentUser = state.session.id 
 
     return {
@@ -25,8 +26,8 @@ const mapDispatchToProps = dispatch => {
         fetchProduct: (productId) => {
             return dispatch(fetchProduct(productId))
         },
-        unmountProduct: () => {
-            return dispatch(unmountProduct())
+        deleteProduct: (productId) => {
+            return dispatch(deleteProduct(productId))
         }
     }
 }

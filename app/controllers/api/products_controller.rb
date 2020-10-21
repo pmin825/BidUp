@@ -32,7 +32,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def destroy
-        @product = Product.find_by(id: params[:id])
+        @product = Product.find(params[:id])
         if @product.destroy 
             render :show
         else
@@ -43,7 +43,7 @@ class Api::ProductsController < ApplicationController
     private 
 
     def product_params
-        params.require(:product).permit(:name, :price, :description, :location, :seller_id, :photoFile)
+        params.require(:product).permit(:name, :price, :description, :location, :seller_id, :photoFile, :id)
     end
 
 end
