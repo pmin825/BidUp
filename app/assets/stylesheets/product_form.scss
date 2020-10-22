@@ -179,3 +179,19 @@ label input {
     cursor: pointer;
 }
 
+// .hidden-file-form {
+//     display: none;
+// }
+
+.photo-input input {
+    display: none;
+}
+
+.hidden-button {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+

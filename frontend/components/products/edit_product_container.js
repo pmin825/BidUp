@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchProduct, updateProduct, deleteProduct } from '../../actions/product_actions';
+import { fetchProduct, updateProduct, deleteProduct, updateProduct2 } from '../../actions/product_actions';
 import EditProductForm from "./edit_product_form"
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
         description: "", 
         location: "", 
         seller_id: state.session.id,
-        photoFile: null
+        photoFile: null,
+        photoValue: ""
     };
 
     let product = state.entities.products || defaultProduct;
@@ -24,7 +25,8 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchProduct: (productId) => dispatch(fetchProduct(productId)),
         updateProduct: (product) => dispatch(updateProduct(product)),
-        deleteProduct: (productId) => dispatch(deleteProduct(productId))
+        deleteProduct: (productId) => dispatch(deleteProduct(productId)),
+        updateProduct2: (product) => dispatch(updateProduct2(product))
     }
 }
 

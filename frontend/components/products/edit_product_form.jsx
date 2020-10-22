@@ -36,6 +36,8 @@ class EditProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger 
+        if (this.state.photoFile !== undefined) {
         let productId = this.props.match.params.productId 
         const formData = new FormData();
         formData.append('product[name]', this.state.name);
@@ -45,11 +47,20 @@ class EditProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[photoFile]', this.state.photoFile);
         formData.append('product[id]', productId);
+        
 
+        debugger 
         this.props.updateProduct(formData)
             .then(() => {
                 this.props.history.push('/')
             });
+        }   else {
+            debugger 
+            this.props.updateProduct2(this.state)
+            .then(() => {
+                this.props.history.push('/')
+            })
+        }
     }
 
     update(field) {
@@ -59,7 +70,7 @@ class EditProductForm extends React.Component {
     }
 
     handleFile(e) {
-
+        debugger 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () => {
@@ -68,7 +79,7 @@ class EditProductForm extends React.Component {
         if (file) {
             reader.readAsDataURL(file);
         } 
-
+        this.setState({photoValue: e.currentTarget.value.slice(12, (e.currentTarget.value).length)})
     }
 
     
@@ -85,6 +96,10 @@ class EditProductForm extends React.Component {
                         <div className="product-form-section">
                             <div className="photo-input"><span>Choose new photo:</span>
                                 <input type="file" onChange={this.handleFile}/>
+                            <div className="hidden-butt-cont">
+                                <span className="hidden-button">Choose File</span>
+                                <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
+                            </div>
                             </div>
                             {preview}
                             <label><span>Product name:</span>

@@ -43,6 +43,11 @@ export const updateProduct = (product) => dispatch => {
         .then(payload => dispatch(receiveProduct(payload)))
 }
 
+export const updateProduct2 = (product) => dispatch => {
+    return ProductAPIUtil.updateProduct2(product) 
+        .then(payload => dispatch(receiveProduct(payload)))
+}
+
 export const deleteProduct = (productId) => dispatch => {
     return ProductAPIUtil.deleteProduct(productId)
         .then(() => dispatch(removeProduct(productId)))
