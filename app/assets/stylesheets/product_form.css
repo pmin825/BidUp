@@ -175,5 +175,7 @@ label input {
     outline: none;
     height: 50px;
     font-family: Lato,sans-serif;
+    border: none;
+    cursor: pointer;
 }
 

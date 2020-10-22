@@ -12,6 +12,7 @@ class ProductShow extends React.Component {
         this.props.fetchProduct(this.props.match.params.productId).then(() => {
             this.setState(this.props.product);
         })
+        window.scrollTo(0, 0);
     }
 
 

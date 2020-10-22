@@ -20,6 +20,8 @@ class EditProductForm extends React.Component {
         if (this.props.formType === 'update') {
             this.props.fetchProduct(this.props.match.params.productId);
         }
+
+        window.scrollTo(0, 0);
     }
 
     // componentDidUpdate(prevProps){
@@ -34,7 +36,6 @@ class EditProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
         let productId = this.props.match.params.productId 
         const formData = new FormData();
         formData.append('product[name]', this.state.name);
@@ -42,8 +43,10 @@ class EditProductForm extends React.Component {
         formData.append('product[description]', this.state.description);
         formData.append('product[location]', this.state.location);
         formData.append('product[seller_id]', this.state.seller_id);
+        debugger 
         formData.append('product[photoFile]', this.state.photoFile);
         formData.append('product[id]', productId);
+
         this.props.updateProduct(formData)
             .then(() => {
                 this.props.history.push('/')

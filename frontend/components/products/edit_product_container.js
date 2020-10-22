@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
         description: "", 
         location: "", 
         seller_id: state.session.id,
-        photoFile: null,
+        photoFile: null
     };
 
     let product = state.entities.products || defaultProduct;
