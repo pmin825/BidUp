@@ -96,10 +96,10 @@ class EditProductForm extends React.Component {
                         <div className="product-form-section">
                             <div className="photo-input"><span>Choose new photo:</span>
                                 <input type="file" onChange={this.handleFile}/>
-                            <div className="hidden-butt-cont">
-                                <span className="hidden-button">Choose File</span>
-                                <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
-                            </div>
+                                {/* <div className="hidden-butt-cont">
+                                    <span className="hidden-button">Choose File</span>
+                                    <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
+                                </div> */}
                             </div>
                             {preview}
                             <label><span>Product name:</span>
