@@ -22,7 +22,7 @@ class ProductShow extends React.Component {
 
         let editButton;
             if (this.props.product.seller_id === this.props.currentUser) {
-                editButton = <Link to={`/products/${this.props.product.id}/edit`}><button className="edit-button">CHANGE PHOTO</button></Link>
+                editButton = <Link to={`/products/${this.props.product.id}/edit`}><button className="edit-button">EDIT LISTING</button></Link>
             }   else {
                 editButton = null;
             }

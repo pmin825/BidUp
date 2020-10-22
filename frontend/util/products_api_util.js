@@ -24,7 +24,7 @@ export const createProduct = (product) => {
 }
 
 export const updateProduct = (product) => {
-    debugger 
+
     return $.ajax({
         url: `api/products/${product.get('product[id]')}`,
         method: "PATCH",

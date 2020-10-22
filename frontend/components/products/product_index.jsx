@@ -26,19 +26,19 @@ class ProductIndex extends React.Component {
 
         this.props.products.forEach((product) => {
             if (i % 5 === 1) {
-                col1.push(<ProductIndexItem key={i} product={product}/>);
+                col1.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 2) {
-                col2.push(<ProductIndexItem key={i} product={product}/>);
+                col2.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 3) {
-                col3.push(<ProductIndexItem key={i} product={product}/>);
+                col3.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 4) {
-                col4.push(<ProductIndexItem key={i} product={product}/>);
+                col4.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             if (i % 5 === 0) {
-                col5.push(<ProductIndexItem key={i} product={product}/>);
+                col5.push(<ProductIndexItem key={product.id} product={product}/>);
             }
             i++;
         });

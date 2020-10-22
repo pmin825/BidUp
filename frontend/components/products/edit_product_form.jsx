@@ -36,7 +36,7 @@ class EditProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger 
+    
         if (this.state.photoFile !== undefined) {
         let productId = this.props.match.params.productId 
         const formData = new FormData();
@@ -49,13 +49,13 @@ class EditProductForm extends React.Component {
         formData.append('product[id]', productId);
         
 
-        debugger 
+   
         this.props.updateProduct(formData)
             .then(() => {
                 this.props.history.push('/')
             });
         }   else {
-            debugger 
+   
             this.props.updateProduct2(this.state)
             .then(() => {
                 this.props.history.push('/')
@@ -70,7 +70,7 @@ class EditProductForm extends React.Component {
     }
 
     handleFile(e) {
-        debugger 
+    
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () => {
@@ -85,7 +85,12 @@ class EditProductForm extends React.Component {
     
     render() {
 
-        const preview = this.state.photoUrl ? <img className="photo-prev" src={this.state.photoUrl}/> : null 
+        const preview = this.state.photoUrl ? 
+        <>
+        <p>New Photo:</p>
+        <img className="photo-prev" src={this.state.photoUrl}/>
+        </> 
+        : null 
         return(
             <div className="plist-container">
                 <div className="form-banner">
@@ -94,27 +99,36 @@ class EditProductForm extends React.Component {
                 <div className="product-form-container2">
                     <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
                         <div className="product-form-section">
-                            <div className="photo-input"><span>Choose new photo:</span>
-                                <input type="file" onChange={this.handleFile}/>
-                                {/* <div className="hidden-butt-cont">
-                                    <span className="hidden-button">Choose File</span>
-                                    <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
-                                </div> */}
+                            
+                            <div className ="photo-input-container">
+                                <label>
+                                    <div className="photo-input"><span>Edit your product photo</span>
+                                        <input type="file" onChange={this.handleFile} 
+                                            className={this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} 
+                                        />
+                                        <div className="custom-file">
+                                            <span className="custom-file-upload">Choose File</span>
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
+                            <p>Current Photo:</p>
+                            <img className="prev-list-photo" src={this.props.product.photo_url} /> 
+                            
                             {preview}
-                            <label><span>Product name:</span>
+                            <label><span>Product name</span>
                                 <p>Include keywords that buyers would use to search for your item.</p>
                                 <input type="text" value={this.state.name} onChange={this.update('name')}/>
                             </label>
-                            <label><span>Price:</span>
+                            <label><span>Price</span>
                                 <p>Select a starting price for customers to bid on.</p>
                                 <input type="text" value={this.state.price} onChange={this.update('price')}/>
                             </label>
-                            <label><span>Location:</span>
+                            <label><span>Location</span>
                                 <p>Enter your location so local buyers can find you.</p>
                                 <input type="text" value={this.state.location} onChange={this.update('location')}/>
                             </label>
-                            <label className="prod-form-desc"><span>Description:</span>
+                            <label className="prod-form-desc"><span>Description</span>
                                 <p>Write a description about your product here. The more information the better. </p>
                                 <textarea value={this.state.description} onChange={this.update('description')}/>
                             </label>
@@ -130,3 +144,5 @@ class EditProductForm extends React.Component {
 }
 
 export default withRouter(EditProductForm)
+
+

@@ -55,10 +55,10 @@
     
 }
 
-span {
-    font-weight: 550;
-    /* margin-bottom: 10px; */
-}
+// span {
+//     font-weight: 550;
+//     /* margin-bottom: 10px; */
+// }
 
 .product-form-section div {
     font-family: Lato,sans-serif;
@@ -132,10 +132,10 @@ label input {
 }
 
 .photo-prev {
-    height: 15%;
-    width: 60%;
+    height: 10%;
+    width: 70%;
     margin-bottom: 10px;
-    /* margin-top: -20px; */
+    margin-top: 2px;
     border-radius: .25rem;
 }
 
@@ -158,16 +158,7 @@ label input {
     /* cursor: pointer; */
 }
 
-/* .photo-cont input {
-    width: 200px;
-    height: 50px;
 
-/* } */
-
-.photo-input {
-    margin-bottom: 15px;
-    
-}
 
 .create-update-button button { 
     background-color: #00ab80;
@@ -177,21 +168,63 @@ label input {
     font-family: Lato,sans-serif;
     border: none;
     cursor: pointer;
+    
 }
 
-// .hidden-file-form {
-//     display: none;
-// }
+
 
 // .photo-input input {
 //     display: none;
 // }
 
-// .hidden-button {
-//     border: 1px solid black;
-//     display: inline-block;
-//     padding: 6px 12px;
-//     cursor: pointer;
-//     margin-right: 7px;
+.hidden-file-form {
+    display: none;
+}
+
+
+
+.custom-file  {
+    // border: 1px solid black;
+    // cursor: pointer;
+    width: fit-content;
+    display: inline-block;
+    background-color: #00ab80;
+    color: #ffffff;
+    outline: none;
+    height: 50px !important;
+    font-family: Lato,sans-serif !important;
+    border: none;
+    cursor: pointer;
+    font-weight: 1 !important;
+    padding: 5px;
+    font-size: 12px !important;
+    // margin-top: 5px !important;
+
+}
+
+.photo-input-container {
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.prev-list-photo {
+    height: 15%;
+    width: 60%;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    border-radius: .25rem;  
+}
+
+.hidden-txt {
+    display: none;
+}
+
+
+
+
+
+// .real-button    {
+//     display: none;
 // }
+
 
