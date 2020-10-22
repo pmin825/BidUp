@@ -43,7 +43,6 @@ class EditProductForm extends React.Component {
         formData.append('product[description]', this.state.description);
         formData.append('product[location]', this.state.location);
         formData.append('product[seller_id]', this.state.seller_id);
-        debugger 
         formData.append('product[photoFile]', this.state.photoFile);
         formData.append('product[id]', productId);
 

@@ -24,7 +24,6 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = Product.find_by(id: params[:id])
-        debugger 
         if @product.update(product_params)
             render :show
         else
