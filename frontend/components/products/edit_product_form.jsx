@@ -24,15 +24,6 @@ class EditProductForm extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    // componentDidUpdate(prevProps){
-    //     if (this.props.formType === 'update') {
-    //         if (prevProps.product.id != this.props.match.params.productId) {
-    //             this.props.fetchProduct(this.props.match.params.productId).then(() => {
-    //                 this.setState(this.props.product)
-    //             })
-    //         }
-    //     }
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
