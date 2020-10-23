@@ -12,7 +12,7 @@
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash.png "Splash page")
 
-# Edit product listing 
+## Edit Product Feature - Code Walk Through
 
 ```js
 class EditProductForm extends React.Component {
