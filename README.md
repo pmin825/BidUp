@@ -8,11 +8,23 @@
 
 *  Products: Users are able to create/edit/delete their own product listings
 
+## Technologies 
+
+*  React/Redux
+
+*  Ruby on Rails 
+
+*  Javascript 
+
+*  AWS 
+
 ## Splash page
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash.png "Splash page")
 
-## Edit Product Feature - Code Walk Through
+## Edit Product - Code Walk Through
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/editcompare.png "Edit form")
 
 ```js
 class EditProductForm extends React.Component {
@@ -69,16 +81,6 @@ class EditProductForm extends React.Component {
         }
     }
 ```
-
-## Technologies 
-
-*  React/Redux
-
-*  Ruby on Rails 
-
-*  Javascript 
-
-*  AWS 
 
 ## Future Direction
 
