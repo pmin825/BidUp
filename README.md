@@ -1,24 +1,31 @@
-# README
+# BidUp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[BidUp](https://bid-up.herokuapp.com/#/ "BidUp"), an OfferUp clone, is an online marketplace that is primarily focused on in-person transactions. 
 
-Things you may want to cover:
+## Key Features 
 
-* Ruby version
+*  Session: Secure account creation, login, and guest/demo login
 
-* System dependencies
+*  Products: Users are able to create/edit/delete their own product listings
 
-* Configuration
+## Edit Listing 
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## Technologies 
 
-* Services (job queues, cache servers, search engines, etc.)
+*  React/Redux
 
-* Deployment instructions
+*  Ruby on Rails 
 
-* ...
+*  Javascript 
+
+*  AWS 
+
+## Future Direction
+
+*  Bids: Users are able to submit bids on product listings. Buyers and sellers both will have a user profile page that shows the items they have bidded on and/or are selling. 
+
+*  Ratings/Reviews: Users are able to leave a rating and review for each other. 
+
+*  Search: Users can search for product through text to see that product's listings.. 
