@@ -22,7 +22,11 @@
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash.png "Splash page")
 
-## Edit Product - Code Walk Through
+## Product Show page
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Splash page")
+
+## Edit Product page - Code Walk Through
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/editformss2.png "Edit form")
 
