@@ -10,6 +10,7 @@
 
 ## Edit Listing 
 
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash_ss.png "Logo Title Text 1")
 
 
 ## Technologies 
