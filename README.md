@@ -8,10 +8,67 @@
 
 *  Products: Users are able to create/edit/delete their own product listings
 
-## Edit Listing 
+## Splash page
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash_ss.png "Logo Title Text 1")
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash.png "Splash page")
 
+# Edit product listing 
+
+```js
+class EditProductForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = this.props.product 
+        
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+    }
+
+    componentDidMount(){
+
+        if (this.props.currentUser != this.props.product.seller_id) {
+            this.props.history.push('/')
+        }
+
+        if (this.props.formType === 'update') {
+            this.props.fetchProduct(this.props.match.params.productId);
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+
+    handleSubmit(e) {
+        e.preventDefault();
+    
+        if (this.state.photoFile !== undefined) {
+        let productId = this.props.match.params.productId 
+        const formData = new FormData();
+        
+        formData.append('product[name]', this.state.name);
+        formData.append('product[price]', this.state.price);
+        formData.append('product[description]', this.state.description);
+        formData.append('product[location]', this.state.location);
+        formData.append('product[seller_id]', this.state.seller_id);
+        formData.append('product[photoFile]', this.state.photoFile);
+        formData.append('product[id]', productId);
+        
+
+   
+        this.props.updateProduct(formData)
+            .then(() => {
+                this.props.history.push('/')
+            });
+        }   else {
+   
+            this.props.updateProduct2(this.state)
+            .then(() => {
+                this.props.history.push('/')
+            })
+        }
+    }
+```
 
 ## Technologies 
 

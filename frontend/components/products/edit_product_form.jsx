@@ -31,6 +31,7 @@ class EditProductForm extends React.Component {
         if (this.state.photoFile !== undefined) {
         let productId = this.props.match.params.productId 
         const formData = new FormData();
+        
         formData.append('product[name]', this.state.name);
         formData.append('product[price]', this.state.price);
         formData.append('product[description]', this.state.description);
