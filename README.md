@@ -24,3 +24,4 @@
 
 *  Ratings/Reviews: Users are able to leave a rating and review for each other. 
 
+*  Search: Users can search for product through text to see that product's listings.. 
