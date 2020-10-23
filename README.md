@@ -28,7 +28,7 @@
 
 ## Edit Product page - Code Walk Through
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/editformss2.png "Edit form")
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/updateproduct.png "Edit form")
 
 ```js
 class EditProductForm extends React.Component {
