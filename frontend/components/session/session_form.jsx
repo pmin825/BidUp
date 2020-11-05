@@ -34,32 +34,31 @@ class SessionForm extends React.Component {
     
     demoLogin(e) {
         e.preventDefault()
-        const demo = { username: "demo_user", password: "password"}
+        const demoUser = { username: "demo_user", password: "password"}
         const speed = 100;
     
-        if (this.state.username !== demo.username) {
-            const inputUsername = setInterval(() => {
-                if (this.state.username !== demo.username) {
-                    const temp = demo.username.slice(0, this.state.username.length + 1);
+        if (this.state.username !== demoUser.username) {
+            const usernameInput = setInterval(() => {
+                if (this.state.username !== demoUser.username) {
+                    const temp = demoUser.username.slice(0, this.state.username.length + 1);
                     this.setState({username: temp})
                 } else {
-                    clearInterval(inputUsername);
-                    animatePW();
+                    clearInterval(usernameInput);
+                    animate();
                 }
             }, speed)
         }
-        const animatePW = () => {
-            if (this.state.password !== demo.password) {
-                const inputPassword = setInterval(() => {
-                    if (this.state.password !== demo.password) {
-                        const temp = demo.password.slice(0, this.state.password.length + 1);
+        const animate = () => {
+            if (this.state.password !== demoUser.password) {
+                const pw = setInterval(() => {
+                    if (this.state.password !== demoUser.password) {
+                        const temp = demoUser.password.slice(0, this.state.password.length + 1);
                         this.setState({ password: temp });
                     } else {
-                        clearInterval(inputPassword);
-                        this.props.demoLogin(demo).then(
+                        clearInterval(pw);
+                        this.props.demoLogin(demoUser).then(
                             () => {
                                 this.props.closeModal()
-                                // this.props.history.push("/home")
                             })
                     }
                 }, speed);

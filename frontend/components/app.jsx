@@ -18,7 +18,6 @@ import ProductShowContainer from './products/product_show_container';
 import CreateProductContainer from './products/create_product_container';
 import EditProductContainer from "./products/edit_product_container"
 
-
 const App = () => (
   <div>
     <Modal />

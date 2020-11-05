@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from './store/store';
 import { login, logout, signup } from './actions/session_actions';
+import ReactGA from 'react-ga';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -29,5 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup;
     window.logout = logout; 
     
+
+    function initializeReactGA() {
+    ReactGA.initialize('G-6CBPE55S7T');
+    ReactGA.pageview('/homepage');
+    }
+
+    initializeReactGA(); 
 });
+
+
 
