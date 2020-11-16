@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bids
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resources :products
