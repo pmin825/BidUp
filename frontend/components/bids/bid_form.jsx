@@ -1,0 +1,48 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+class BidForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {amount: 0}
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    update(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.match.params.productId}
+        this.props.createBid(bid);
+        this.setState({
+            bid_amount: "",
+        });
+    }
+
+    render() {
+        const login = (
+            <p className="bid-login-first">You must be logged in to submit a bid</p>
+        )
+
+        let submitBid;
+        if (this.props.currentUser) {
+            submitBid = (
+                <div className="create-bid-container">
+                    <form className="create-bid-form">
+                        <h1 className="form-title">Submit a Bid</h1>
+                        <input className="bid-amount-input" type="number" min="1" name="amount" onChange={this.update("amount")} value={this.state.amount} />
+                        <button className="bid-submit-button" onClick={this.handleSubmit}>Submit Bid</button>
+                    </form>
+                </div>
+            )
+        }
+        return (
+          this.props.currentUser ? submitBid : login
+        )
+    }
+}
+export default BidForm;

@@ -35,7 +35,6 @@ class ProductShow extends React.Component {
                 deleteButton = null;
             }
 
-
         return (
             !showProduct ? null : (
             <div className="show-page">
@@ -66,6 +65,7 @@ class ProductShow extends React.Component {
                             <i className="fas fa-map-marker-alt"></i>
                             <p>Local pickup</p>
                         </div>
+                        <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
                         <div className="show-border-line">
                         </div>
                         {editButton}
