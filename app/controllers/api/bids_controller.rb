@@ -1,7 +1,6 @@
 class BidsController < ApplicationController
     def create
         @bid = Bid.new(bid_params)
-        # debugger
         if @bid.save
             render :show
         else 
