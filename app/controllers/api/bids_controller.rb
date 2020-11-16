@@ -1,4 +1,10 @@
 class BidsController < ApplicationController
+
+    def index 
+        @bids = Bid.all
+        render :index
+    end
+
     def create
         @bid = Bid.new(bid_params)
         if @bid.save

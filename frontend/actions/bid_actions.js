@@ -1,7 +1,15 @@
 import * as BidApiUtil from '../util/bids_api_util'
 
+export const RECEIVE_BIDS = 'RECEIVE_BIDS'
 export const RECEIVE_BID = 'RECEIVE_BID';
 export const REMOVE_BID = 'REMOVE_BID';
+
+const receiveBids = bids => {
+    return {
+        type: RECEIVE_BIDS,
+        bids 
+    }
+}
 
 const receiveBid = bid => {
     return {
@@ -15,6 +23,16 @@ const removeBid = bidId => {
         type: REMOVE_BID,
         bidId
     }
+}
+
+export const fetchBids = () => dispatch => {
+    return BidApiUtil.fetchBids() 
+        .then(payload => dispatch(receiveBids(payload)))
+}
+
+export const fetchBid = (productId) => dispatch => {
+    return BidApiUtil.fetchBid(productId) 
+        .then(payload => dispatch(receiveProduct(payload)))
 }
 
 export const createBid = (bid) => {
