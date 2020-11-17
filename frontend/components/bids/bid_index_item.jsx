@@ -18,7 +18,8 @@ class BidIndexItem extends React.Component{
             return(
                 <div className="bid-container">
                     <span className="bid-product">Product: {this.props.bid.productName}</span>
-                    <span className="bid-amount">Bid Price: ${this.props.bid.bid_amount}</span>  
+                    <span className="bid-amount">Bid Price: ${this.props.bid.bid_amount}</span> 
+                    <span className="bid-name">Seller Name: {seller.username}</span> 
                 </div>
             )
         }   else {
