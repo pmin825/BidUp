@@ -8,6 +8,7 @@
 
 User.destroy_all
 Product.destroy_all
+Bid.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
 

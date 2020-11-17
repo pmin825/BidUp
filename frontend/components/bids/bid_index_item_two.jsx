@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BidIndexItem extends React.Component{
+class BidIndexItemTwo extends React.Component{
     constructor(props){
         super(props)
     }
@@ -14,7 +14,7 @@ class BidIndexItem extends React.Component{
         let seller;
         seller = this.props.users[this.props.bid.seller_id]
         // debugger 
-        if (this.props.bid.bidder_id === this.props.currentUser.id) {
+        if (this.props.bid.seller_id === this.props.currentUser.id) {
             return(
                 <div className="bid-container">
                     {/* <span className="bidder-name">From: {seller.username}</span> */}
@@ -29,4 +29,4 @@ class BidIndexItem extends React.Component{
     }
 }   
 
-export default BidIndexItem;
+export default BidIndexItemTwo;
