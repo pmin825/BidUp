@@ -5,7 +5,6 @@ import {withRouter} from 'react-router-dom'
 import {closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger 
     return {
         bid: {
             bid_amount: "",

@@ -1,8 +1,76 @@
 .bid-container span {
-    margin: 5px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+}
+
+.bid-container {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: Lato,sans-serif;
+    color: darkslategray;
+    border: 1px solid gray;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    background-color: #f4f4f4;
 }
 
 .bid-list-wrapper {
     margin-top: 100px;
-    height: 100vh;
+    min-height: 500px;
+    border: 1px solid black;
+    width: 65vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.bid-list-wrapper h3 {
+    // background-color: #f4f4f4;
+    font-size: 22px;
+    font-family: Lato,sans-serif;
+    color: #00ab80;
+    font-weight: 900;
+    // margin-top: 25px;
+    // margin-bottom: 25px;
+    border-bottom: 1px solid grey;
+}
+
+.bid-selling h3 {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.bid-buying h3 {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.bid-product {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.bid-amount {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.bid-selling {
+    width: 100%;
+    padding: 20px;
+}
+
+.bid-buying {
+    width: 100%;
+    padding: 20px;
+}
+
+

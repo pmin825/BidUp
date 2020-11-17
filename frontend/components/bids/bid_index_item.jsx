@@ -15,11 +15,10 @@ class BidIndexItem extends React.Component{
         seller = this.props.users[this.props.bid.seller_id]
     
         if (this.props.bid.bidder_id === this.props.currentUser.id) {
-            debugger 
             return(
                 <div className="bid-container">
-                    <span className="bidder-name">Product: {this.props.bid.productName}</span>
-                    <span className="bidder-amount">Bid Amount: {this.props.bid.bid_amount}</span>  
+                    <span className="bid-product">Product: {this.props.bid.productName}</span>
+                    <span className="bid-amount">Bid Price: ${this.props.bid.bid_amount}</span>  
                 </div>
             )
         }   else {
