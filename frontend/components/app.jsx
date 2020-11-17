@@ -29,10 +29,10 @@ const App = () => (
       <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} /> 
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <ProtectedRoute exact path='/bids' component={BidIndexContainer}/>
           <ProtectedRoute exact path='/products/new' component={CreateProductContainer} />
           <Route exact path='/products/:productId/edit' component={EditProductContainer} />
           <Route exact path='/products/:productId' component={ProductShowContainer} />
-          <Route exact path='/bids' component={BidIndexContainer}/>
           <Route exact path="/" component={ProductIndexContainer} />
           <Redirect to="/"></Redirect>
       </Switch>

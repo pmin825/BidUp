@@ -12,6 +12,7 @@ const Greeting = (props) => {
       <button className="session-button" onClick={() => props.openModal('signup')}>Sign up</button>
       </nav>
     );
+    
 
     let welcome; 
     if (props.currentUser ) {
