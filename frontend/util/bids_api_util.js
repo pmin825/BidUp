@@ -1,4 +1,5 @@
 export const fetchBids = () => {
+    debugger 
     return $.ajax({
         url: '/api/bids',
         method: 'GET'

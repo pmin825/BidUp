@@ -1,6 +1,7 @@
-class BidsController < ApplicationController
+class Api::BidsController < ApplicationController
 
     def index 
+        debugger 
         @bids = Bid.all
         render :index
     end

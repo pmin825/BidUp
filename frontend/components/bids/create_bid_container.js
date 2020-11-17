@@ -6,9 +6,11 @@ import {withRouter} from 'react-router-dom'
 const mapStateToProps = (state, ownProps) => {
     return {
         bid: {
-            amount: ""
+            bid_amount: "",
+            bidder_id: "",
+            product_id: "",
         },
-        
+        productId: state.entities.products.id, 
         currentUser: state.entities.users[state.session.id]
     }
 }

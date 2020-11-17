@@ -6,6 +6,10 @@ class BidIndex extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchBids();
+    }
+
     render() {
         
         let bids = this.props.bids.map((bid, idx) => {

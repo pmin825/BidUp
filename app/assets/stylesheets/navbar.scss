@@ -51,13 +51,19 @@
 
 }
 
+.user-link {
+    text-decoration: none;
+}
+
 .welcome-name {
     font-family: Lato,sans-serif;
     font-size: 18px;
     font-weight: 700px;
     margin-right: 15px;
     color: #ffffff;
-    
+    outline: none;
+    text-decoration: none;
+    text-underline-offset: none;
 }
 
 .welcome-message {

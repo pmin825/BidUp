@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class BidForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {amount: 0}
+        this.state = this.props.bid;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -16,8 +16,9 @@ class BidForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.match.params.productId}
-        this.props.createBid(bid);
+        debugger 
+        let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.productId }
+        this.props.createBid(this.state);
         this.setState({
             bid_amount: "",
         });
@@ -34,7 +35,7 @@ class BidForm extends React.Component {
                 <div className="create-bid-container">
                     <form className="create-bid-form">
                         <h1 className="form-title">Submit a Bid</h1>
-                        <input className="bid-amount-input" type="number" min="1" name="amount" onChange={this.update("amount")} value={this.state.amount} />
+                        <input className="bid-amount-input" type="number" min="1" name="bid_amount" onChange={this.update("bid_amount")} value={this.state.bid_amount} />
                         <button className="bid-submit-button" onClick={this.handleSubmit}>Submit Bid</button>
                     </form>
                 </div>
