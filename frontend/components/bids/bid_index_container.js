@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 import BidIndex from './bid_index';
 import { fetchBids, deleteBid } from '../../actions/bid_actions';
+import { fetchProducts } from '../../actions/product_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchBids: (bids) => dispatch(fetchBids(bids)),
-        deleteBid: (bidId) => dispatch(deleteBid(bidId))
+        deleteBid: (bidId) => dispatch(deleteBid(bidId)),
+        fetchProducts: () => dispatch(fetchProducts())
     }
 }
 

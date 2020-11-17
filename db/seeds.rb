@@ -11,6 +11,7 @@ Product.destroy_all
 Bid.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
+ActiveRecord::Base.connection.reset_pk_sequence!('bids')
 
 
 user1 = User.create!(email: 'demo@aa.io', username: 'demo_user', password: 'password')

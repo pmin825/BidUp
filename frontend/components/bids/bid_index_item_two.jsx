@@ -13,12 +13,12 @@ class BidIndexItemTwo extends React.Component{
         bidder = this.props.users[this.props.bid.bidder_id]
         let seller;
         seller = this.props.users[this.props.bid.seller_id]
-        // debugger 
+        //  
         if (this.props.bid.seller_id === this.props.currentUser.id) {
             return(
                 <div className="bid-container">
-                    {/* <span className="bidder-name">From: {seller.username}</span> */}
-                    <span className="bidder-amount">Bid Amount: {this.props.bid.bid_amount}</span>  
+                    <span className="bidder-name">Product: {this.props.bid.productName}</span>
+                    <span className="bidder-amount">Selling Price: {this.props.bid.bid_amount}</span>  
                 </div>
             )
         }   else {

@@ -16,12 +16,14 @@ class BidForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.productId, seller_id: this.props.sellerId }
-        debugger 
+        let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.productId, seller_id: this.props.sellerId, productName: this.props.productName }
+         debugger 
         this.props.createBid(bid);
         this.setState({
             bid_amount: "",
         });
+        this.props.closeModal();
+        alert('Your Bid as been successfully submitted')
     }
 
     render() {
