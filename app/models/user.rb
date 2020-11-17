@@ -11,6 +11,10 @@ class User < ApplicationRecord
         foreign_key: :seller_id,
         class_name: 'Product'
 
+    has_many :bids, 
+        foreign_key: :bidder_id,
+        class_name: 'Bid'
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user

@@ -10,9 +10,9 @@ class Product < ApplicationRecord
     has_one_attached :photoFile
     # has_one_attached :large_photo 
 
-    # has_many :bids, 
-    #     foreign_key: :product_id,
-    #     class_name: "Bid"
+    has_many :bids, 
+        foreign_key: :product_id,
+        class_name: "Bid"
 
 end
 
