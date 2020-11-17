@@ -12,9 +12,17 @@ class BidIndex extends React.Component {
 
     render() {
         
+        // let bids = this.props.bids.map((bid, idx) => {
+        //     return <BidIndexItem bid={bid} key={idx} deleteBid={this.props.deleteBid} users={this.props.users} currentUser={this.props.currentUser}/>
+        // })
+
         let bids = this.props.bids.map((bid, idx) => {
             return <BidIndexItem bid={bid} key={idx} deleteBid={this.props.deleteBid} users={this.props.users} currentUser={this.props.currentUser}/>
         })
+
+        // let bidsBuying = this.props.bids.map(bid, idx) => {
+        //     return 
+        // }
 
         return (
                 <div className="bid-body">

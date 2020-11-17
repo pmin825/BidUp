@@ -12,13 +12,19 @@ class BidIndexItem extends React.Component{
         let bidder;
         bidder = this.props.users[this.props.bid.bidder_id]
 
-        return(
-            <div className="bid-container">
-                <span className="bidder-name">From: {bidder.username}</span>
-                <span className="bidder-amount">Bid Amount: {this.props.bid.bid_amount}</span>  
-            </div>
-        )
+        if (this.props.bid.bidder_id === this.props.currentUser.id) {
+            return(
+                <div className="bid-container">
+                    <span className="bidder-name">From: {bidder.username}</span>
+                    <span className="bidder-amount">Bid Amount: {this.props.bid.bid_amount}</span>  
+                </div>
+            )
+        }   else {
+            return (
+                <div></div>
+            )
+        }
     }
-}
+}   
 
 export default BidIndexItem;
