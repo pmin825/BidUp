@@ -9,7 +9,9 @@ const mapStateToProps = (state, ownProps) => {
             bid_amount: "",
             bidder_id: "",
             product_id: "",
+            seller_id: ""
         },
+        sellerId: state.entities.products.seller_id,
         productId: state.entities.products.id, 
         currentUser: state.entities.users[state.session.id]
     }
