@@ -19,6 +19,7 @@
  *= require product_show
  *= require create_product
  *= require product_form
+ *= require bid_index 
  */
 
 

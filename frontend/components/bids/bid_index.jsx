@@ -17,11 +17,18 @@ class BidIndex extends React.Component {
         })
 
         return (
-            <div>
-                <ul>
-                    <li>{bids}</li>                    
-                </ul>
-            </div>
+                <div className="bid-body">
+                    <div className="bid-list-wrapper">
+                        <div className="bid-selling">
+                            <h3>Selling</h3>
+                            {bids}
+                        </div>
+                        <div className="bid-buying">
+                            <h3>Buying</h3>
+                            {bids}
+                        </div>              
+                    </div>
+                </div>
         )
     }
 }

@@ -26,7 +26,6 @@ const removeBid = bidId => {
 }
 
 export const fetchBids = () => dispatch => {
-    debugger 
     return BidApiUtil.fetchBids() 
         .then(payload => dispatch(receiveBids(payload)))
 }
