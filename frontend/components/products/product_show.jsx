@@ -36,6 +36,10 @@ class ProductShow extends React.Component {
                 deleteButton = null;
             }
 
+        let sellerName
+        this.props.users[this.props.product.seller_id] ? sellerName = this.props.users[this.props.product.seller_id].username : sellerName = null;
+        
+
             debugger
         return (
             !showProduct ? null : (
@@ -69,7 +73,7 @@ class ProductShow extends React.Component {
                         </div>
                         <div className="make-a-bid">
                             <i className="fas fa-user-circle"></i>
-                            {/* <p>{this.props.sellerName.username}</p> */}
+                            <p>{sellerName}</p>
                             <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
                         </div>
                         <div className="show-border-line">
