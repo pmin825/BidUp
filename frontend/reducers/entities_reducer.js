@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import usersReducer from "./users_reducer";
 import productsReducer from "./products_reducer";
 import bidsReducer from "./bids_reducer";
+import reviewsReducer from "./reviews_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,

@@ -5,8 +5,8 @@ const reviewsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
 
     switch (action.type) {
-        case RECEIVE_PRODUCT:
-            return action.reviews
+        // case RECEIVE_REVIEWS:
+        //     return action.reviews
         case RECEIVE_REVIEW:
              nextState[action.review.id] = action.review
              return nextState

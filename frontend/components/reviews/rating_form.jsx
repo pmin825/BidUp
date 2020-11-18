@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRating from './star_rating';
 
-class RatingForm extends Component {
+class RatingForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,13 +13,11 @@ class RatingForm extends Component {
     }
 
 
-    update = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+    update(field) {
+        return (e) => this.setState({ [field]: e.currentTarget.value })
     };
 
-    setRating = rating => {
+    setRating(rating) {
         this.setState({ rating: rating });
     };
 
@@ -64,4 +62,4 @@ class RatingForm extends Component {
 }
 
 
-export default withAuth(RatingForm);
+export default (RatingForm);

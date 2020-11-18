@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import CreateBidContainer from '../bids/create_bid_container';
+import CreateReviewContainer from '../reviews/create_review_container';
 
 
 function Modal({modal, closeModal}) {
@@ -21,6 +22,8 @@ function Modal({modal, closeModal}) {
     case 'submitbid':
       component = <CreateBidContainer />;
       break;
+    case 'review':
+      component = <CreateReviewContainer />
     default:
       return null;
   }

@@ -76,7 +76,8 @@ class ProductShow extends React.Component {
                             <i className="fas fa-user-circle"></i>
                             <p className="seller-name">{sellerName}</p>
                             {/* <StarRating /> */}
-                            <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
+                            <button className="submitbid-button" onClick={() => this.props.openModal('submitbid')}>Submit a Bid</button>
+                            <button className="review-button" onClick={() => this.props.openModal('review')}>Review Seller</button>
                         </div>
                         <div className="show-border-line">
                         </div>

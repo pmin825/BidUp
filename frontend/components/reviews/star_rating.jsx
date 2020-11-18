@@ -1,6 +1,6 @@
 import React from 'react';
 
-class StarRating extends Component {
+class StarRating extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class StarRating extends Component {
     this.setRating();
   }
 
-  hoverHandler = e => {
+  hoverHandler(e) {
     const stars = e.target.parentElement.getElementsByClassName('star');
     const hoverValue = e.target.dataset.value;
     Array.from(stars).forEach(star => {
@@ -20,7 +20,7 @@ class StarRating extends Component {
     });
   };
 
-  setRating = e => {
+  setRating(e) {
     const stars = this.refs.rating.getElementsByClassName('star');
     Array.from(stars).forEach(star => {
       star.style.color =
@@ -28,7 +28,7 @@ class StarRating extends Component {
     });
   };
 
-  starClickHandler = e => {
+  starClickHandler(e) {
     let rating = e.target.dataset.value;
     this.setState({ currentRating: rating }); // set state so the rating stays highlighted
     if(this.props.onClick){

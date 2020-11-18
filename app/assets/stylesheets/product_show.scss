@@ -176,12 +176,12 @@ h4 {
     // justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: -190px;
+    margin-top: -220px;
     // margin-bottom: -20px;
     border: 1px solid lightgray;
     border-radius: .3rem;
     width: 290px;
-    height: 200px;
+    height: 250px;
     margin-left: auto;
     background-color: white;
     z-index: 50;
@@ -202,6 +202,8 @@ h4 {
     border-radius: .3rem;
     margin-left: auto;
     margin-right: auto;
+    // margin-bottom: 5px;
+    // margin-top: 5px;
     
 }
 
@@ -221,4 +223,21 @@ h4 {
     overflow: hidden;
     font-weight: 600;
     font-family: Lato,sans-serif;
+}
+
+.review-button {
+    width: 90%;
+    height: 50px;
+    background-color: transparent;
+    color: #00ab80;
+    font-family: Lato,sans-serif;
+    font-size: 20px;
+    border: 1px solid #00ab80;
+    cursor: pointer;
+    outline: none;
+    border-radius: .3rem;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 5px;
+    margin-top: -15px;
 }
