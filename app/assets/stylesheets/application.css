@@ -20,6 +20,8 @@
  *= require create_product
  *= require product_form
  *= require bid_index 
+ *= require star_rating 
+ *= require rating_form
  */
 
 

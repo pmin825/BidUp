@@ -173,7 +173,7 @@ h4 {
 .make-a-bid {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     margin-top: -190px;
@@ -200,12 +200,25 @@ h4 {
     cursor: pointer;
     outline: none;
     border-radius: .3rem;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
 .make-a-bid i {
     font-size: 80px;
     color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
     // background-color: darkgray;
 }
 
+.seller-name {
+    font-size: 18px;
+    text-overflow: ellipsis;
+    color: #4a4a4a;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    font-family: Lato,sans-serif;
+}

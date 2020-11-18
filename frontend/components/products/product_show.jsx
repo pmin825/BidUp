@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+// import StarRating from '../../components/rater/star_rating';
 
 
 class ProductShow extends React.Component {
@@ -73,7 +74,8 @@ class ProductShow extends React.Component {
                         </div>
                         <div className="make-a-bid">
                             <i className="fas fa-user-circle"></i>
-                            <p>{sellerName}</p>
+                            <p className="seller-name">{sellerName}</p>
+                            {/* <StarRating /> */}
                             <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
                         </div>
                         <div className="show-border-line">
