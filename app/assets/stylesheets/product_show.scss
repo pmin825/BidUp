@@ -21,7 +21,7 @@
 .show-product-image-cont img:nth-child(3) {
     opacity: .5;
     filter: blur(8px);
- 
+
 }
 
 .mask{
@@ -166,4 +166,41 @@ h4 {
     font-family: Lato,sans-serif;
     border: none;
     cursor: pointer;
+}
+
+.make-a-bid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: -190px;
+    // margin-bottom: -20px;
+    border: 1px solid lightgray;
+    border-radius: .3rem;
+    width: 290px;
+    height: 200px;
+    margin-left: auto;
+    background-color: white;
+    z-index: 1;
+}
+
+.submitbid-button {
+    width: 90%;
+    height: 50px;
+    background-color: #00ab80;
+    color: #ffffff;
+    font-family: Lato,sans-serif;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: .3rem;
+    
+}
+
+.make-a-bid i {
+    font-size: 80px;
+    color: lightgray;
+    // background-color: darkgray;
 }

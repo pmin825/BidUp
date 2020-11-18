@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchProduct, updateProduct, deleteProduct } from '../../actions/product_actions';
+import { fetchProduct, deleteProduct } from '../../actions/product_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import ProductShow from './product_show';
 import { openModal } from '../../actions/modal_actions';
 
@@ -32,6 +33,9 @@ const mapDispatchToProps = dispatch => {
         },
         openModal: modal => {
             return dispatch(openModal(modal))
+        },
+        fetchUsers: () => {
+            return dispatch(fetchUsers())
         }
     }
 }

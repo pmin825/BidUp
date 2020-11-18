@@ -65,7 +65,11 @@ class ProductShow extends React.Component {
                             <i className="fas fa-map-marker-alt"></i>
                             <p>Local pickup</p>
                         </div>
-                        <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
+                        <div className="make-a-bid">
+                            <i class="fas fa-user-circle"></i>
+                            <p>SELLER NAME HERE</p>
+                            <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
+                        </div>
                         <div className="show-border-line">
                         </div>
                         {editButton}
