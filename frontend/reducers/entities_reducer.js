@@ -6,7 +6,8 @@ import bidsReducer from "./bids_reducer";
 const entitiesReducer = combineReducers({
     users: usersReducer,
     products: productsReducer,
-    bids: bidsReducer
+    bids: bidsReducer,
+    reviews: reviewsReducer
 });
 
 export default entitiesReducer;
