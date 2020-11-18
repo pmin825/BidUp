@@ -13,13 +13,16 @@ const mapStateToProps = (state, ownProps) => {
         seller_id: state.session.id,
         photoFile: null,
     };
-
+    debugger 
     let product = state.entities.products || defaultProduct 
     let currentUser = state.session.id 
+    // let users = state.entities.users[state.entities.products.seller_id].username
+    let users = state.entities.users 
 
     return {
         product,
-        currentUser
+        currentUser,
+        users
     }
 }
 

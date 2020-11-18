@@ -12,6 +12,7 @@ class ProductShow extends React.Component {
         this.props.fetchProduct(this.props.match.params.productId).then(() => {
             this.setState(this.props.product);
         })
+        this.props.fetchUsers();
         window.scrollTo(0, 0);
     }
 
@@ -35,6 +36,7 @@ class ProductShow extends React.Component {
                 deleteButton = null;
             }
 
+            debugger
         return (
             !showProduct ? null : (
             <div className="show-page">
@@ -66,8 +68,8 @@ class ProductShow extends React.Component {
                             <p>Local pickup</p>
                         </div>
                         <div className="make-a-bid">
-                            <i class="fas fa-user-circle"></i>
-                            <p>SELLER NAME HERE</p>
+                            <i className="fas fa-user-circle"></i>
+                            {/* <p>{this.props.sellerName.username}</p> */}
                             <button className="submitbid-button" onClick={()=> this.props.openModal('submitbid')}>Submit a Bid</button>
                         </div>
                         <div className="show-border-line">
