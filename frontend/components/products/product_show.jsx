@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import StarRating from '../../components/rater/star_rating';
+import ReviewIndexItem from './review_index_item';
 
 
 class ProductShow extends React.Component {
@@ -17,10 +17,6 @@ class ProductShow extends React.Component {
         this.props.fetchReviews();
         window.scrollTo(0, 0);
     }
-
-    // componentWillMount() {
-    //     this.props.fetchReviews();
-    // }
 
     render() {
         let showProduct;
@@ -41,9 +37,25 @@ class ProductShow extends React.Component {
                 deleteButton = null;
             }
 
-        let sellerName
+        let sellerName;
         this.props.users[this.props.product.seller_id] ? sellerName = this.props.users[this.props.product.seller_id].username : sellerName = null;
         
+        let sellerRatings = this.props.sellerReviews.map(review => review.rating);
+
+        let activeStars = [];
+        for(let i = 0; i < sellerRatings; i++) {
+            activeStars.push(<span key={i} className="fa fa-star active"></span>)
+        }
+
+        let allReviews = this.props.sellerReviews.map((sellerReview) => {
+            return <ReviewIndexItem key={sellerReview.id} review={sellerReview} sellerName={sellerName} />
+        })
+    
+        // let inactiveCount = 5 - this.props.seller.rating
+        // let inactiveStars = [];
+        // for (let i = 0; i < inactiveCount; i++) {
+        //     inactiveStars.push(<span key={i} className="fa fa-star"></span>)
+        // }
 
         return (
             !showProduct ? null : (
@@ -78,19 +90,22 @@ class ProductShow extends React.Component {
                         <div className="make-a-bid">
                             <i className="fas fa-user-circle"></i>
                             <p className="seller-name">{sellerName}</p>
-                            {/* <StarRating /> */}
                             <button className="submitbid-button" onClick={() => this.props.openModal('submitbid')}>Submit a Bid</button>
                             <button className="review-button" onClick={() => this.props.openModal('review')}>Review Seller</button>
                         </div>
                         <div className="show-border-line">
                         </div>
-                        {editButton}
-                        {deleteButton}
+                            {editButton}
+                            {deleteButton}
                         <h4>Description</h4>
                         <div className="show-prod-desc">
                             <p>{this.props.product.description}</p>
                         </div>
                         <div className="show-border-line2">
+                        </div>
+                        <h4>Seller Reviews</h4>
+                        <div>
+                            {allReviews}
                         </div>
                     </div>
                 </div>

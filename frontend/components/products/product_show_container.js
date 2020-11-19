@@ -16,15 +16,16 @@ const mapStateToProps = (state, ownProps) => {
     };
     let product = state.entities.products || defaultProduct 
     let currentUser = state.session.id 
-    // let users = state.entities.users[state.entities.products.seller_id].username
     let users = state.entities.users 
     let reviews = state.entities.reviews
-
+    let sellerReviews = Object.values(state.entities.reviews).filter(review => review.reviewee_id === state.entities.products.seller_id)
+    
     return {
         product,
         currentUser,
         users,
-        reviews
+        reviews,
+        sellerReviews
     }
 }
 

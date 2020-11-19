@@ -40,14 +40,17 @@
 
 .show-description-body {
     margin-top: 20px;
-    height: 500px;
+    height: fit-content;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .show-description-cont {
     width: 70%;
     box-sizing: border-box;
+    height: 100%;
+
 }
 
 .show-price-name {
@@ -130,7 +133,7 @@
 }
 
 .show-border-line2 {
-    margin-top: 200px;
+    margin-top: 120px;
     border-bottom: solid #e4e4e4 1px;
 }
 
@@ -240,4 +243,8 @@ h4 {
     margin-right: auto;
     // margin-bottom: 5px;
     margin-top: -15px;
+}
+
+.fa.fa-star.active {
+    color: gold;
 }
