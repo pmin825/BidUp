@@ -19,22 +19,22 @@ class StarRating extends React.Component {
     const stars = e.target.parentElement.getElementsByClassName('star');
     const hoverValue = e.target.dataset.value;
     Array.from(stars).forEach(star => {
-      star.style.color = hoverValue >= star.dataset.value ? 'yellow' : 'gray';
+      star.style.color = hoverValue >= star.dataset.value ? 'gold' : 'gray';
     });
   };
 
   setRating(e) {
       const stars = this.refs.rating.getElementsByClassName('star');
       Array.from(stars).forEach(star => {
-          star.style.color = this.state.currentRating >= star.dataset.value ? 'yellow' : 'gray';
+          star.style.color = this.state.currentRating >= star.dataset.value ? 'gold' : 'gray';
       });
   };
 
   starClickHandler(e) {
       let rating = e.target.dataset.value;
-      this.setState({ currentRating: rating }); // set state so the rating stays highlighted
+      this.setState({ currentRating: rating }); 
       if(this.props.onClick){
-          this.props.onClick(rating); // emit the event up to the parent
+          this.props.onClick(rating); 
       }
   };
 
