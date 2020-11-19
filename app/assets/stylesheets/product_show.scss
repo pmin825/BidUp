@@ -248,7 +248,25 @@ h4 {
 .fa.fa-star.active {
     color: gold;
 }
+.fa.fa-star {
+    color: gray;
+}
 
 .seller-reviews {
     min-height: 200px;
+}
+
+.seller-reviews h4 {
+    margin-bottom: 20px;
+}
+
+.review-item {
+    margin-top: 15px;
+}
+
+.review-item p {
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+    color: #4a4a4a;
+    padding-top: 5px;
 }

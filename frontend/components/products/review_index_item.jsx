@@ -17,7 +17,7 @@ class ReviewIndexItem extends React.Component {
             inactiveStars.push(<span key={i} className="fa fa-star"></span>)
         }
         return (
-            <div>
+            <div className='review-item'>
                 <div className="star-rating">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                     {activeStars.map((star) => (star))}
