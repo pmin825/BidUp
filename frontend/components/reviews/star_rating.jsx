@@ -6,6 +6,9 @@ class StarRating extends React.Component {
     this.state = {
       currentRating: this.props.currentRating
     };
+    this.hoverHandler = this.hoverHandler.bind(this);
+    this.setRating = this.setRating.bind(this);
+    this.starClickHandler = this.starClickHandler.bind(this);
   }
 
   componentDidMount() {
@@ -21,19 +24,18 @@ class StarRating extends React.Component {
   };
 
   setRating(e) {
-    const stars = this.refs.rating.getElementsByClassName('star');
-    Array.from(stars).forEach(star => {
-      star.style.color =
-        this.state.currentRating >= star.dataset.value ? 'yellow' : 'gray';
-    });
+      const stars = this.refs.rating.getElementsByClassName('star');
+      Array.from(stars).forEach(star => {
+          star.style.color = this.state.currentRating >= star.dataset.value ? 'yellow' : 'gray';
+      });
   };
 
   starClickHandler(e) {
-    let rating = e.target.dataset.value;
-    this.setState({ currentRating: rating }); // set state so the rating stays highlighted
-    if(this.props.onClick){
-      this.props.onClick(rating); // emit the event up to the parent
-    }
+      let rating = e.target.dataset.value;
+      this.setState({ currentRating: rating }); // set state so the rating stays highlighted
+      if(this.props.onClick){
+          this.props.onClick(rating); // emit the event up to the parent
+      }
   };
 
   render() {
@@ -51,8 +53,7 @@ class StarRating extends React.Component {
               key={n+1}
               data-value={n+1}
               onMouseOver={this.hoverHandler}
-              onClick={this.starClickHandler}
-              onMouseOut={this.setRating}
+              onClick={this.starClickHandler} 
             >
               &#9733;
             </span>

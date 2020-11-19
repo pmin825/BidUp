@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :description, :rating, :product_id, :user_id, presence: true
+    validates :feedback, :rating, :reviewee_id, :reviewer_id, presence: true
 
     belongs_to :reviewee,
         primary_key: :id,

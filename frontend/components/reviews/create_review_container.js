@@ -1,20 +1,17 @@
-
 import { connect } from "react-redux";
 import RatingForm from "./rating_form";
-// import { createRating } from "../../actions/";
+import { createReview } from "../../actions/review_actions"
 import { closeModal } from '../../actions/modal_actions';
 import { fetchUser } from '../../actions/user_actions'
 import { withRouter } from "react-router-dom"
 
 const mapStateToProps = (state, ownProps) => {
-    
     return ({
         scoreRating: {
-            name: "",
-            review: "",
+            feedback: "",
             rating: 0,
-            seller_id: "",
-            rater_id: ""
+            reviewer_id: "",
+            reviewee_id: ""
         },
         currentUser: state.entities.users[state.session.id],
         sellerId: state.entities.products.seller_id,
@@ -23,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        createRating: (rating) => dispatch(createRating(rating)),
+        createReview: (review) => dispatch(createReview(review)),
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         closeModal: () => dispatch(closeModal()),
     })

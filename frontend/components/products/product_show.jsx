@@ -41,7 +41,6 @@ class ProductShow extends React.Component {
         this.props.users[this.props.product.seller_id] ? sellerName = this.props.users[this.props.product.seller_id].username : sellerName = null;
         
 
-            debugger
         return (
             !showProduct ? null : (
             <div className="show-page">

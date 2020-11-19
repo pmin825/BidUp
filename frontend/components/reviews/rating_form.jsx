@@ -6,12 +6,9 @@ class RatingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.scoreRating
+        this.setRating = this.setRating.bind(this);
+        this.handleReview = this.handleReview.bind(this);
     }
-
-    componentDidMount(){
-        this.props.fetchUser()
-    }
-
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
@@ -21,26 +18,20 @@ class RatingForm extends React.Component {
         this.setState({ rating: rating });
     };
 
+    handleReview(e) {
+        e.preventDefault();
+        let review = { rating: this.state.rating, feedback: this.state.feedback, reviewer_id: this.props.currentUser.id, reviewee_id: this.props.sellerId}
+        this.props.createReview(review);
+        this.props.closeModal();
+    }
 
     render() {
       return (
         <div className="rating-form">
-          <div className="heading">Rate User!</div>
           <div className="form-input">
-            <label htmlFor="name">Seller:</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              onChange={this.update}
-            />
-          </div>
-          <div className="form-input">
-            <label htmlFor="review">Review:</label>
+            <label>Feedback:</label>
             <textarea
-              name="review"
-              id="review"
-              onChange={this.update}
+              onChange={this.update('feedback')}
             />
           </div>
           <div className="form-input rating">
@@ -52,7 +43,7 @@ class RatingForm extends React.Component {
             />
           </div>
           <div className="actions">
-            <button type="submit" onClick={this.saveRating}>
+            <button type="submit" onClick={this.handleReview}>
               Submit Rating
             </button>
           </div>
@@ -62,4 +53,4 @@ class RatingForm extends React.Component {
 }
 
 
-export default (RatingForm);
+export default RatingForm;

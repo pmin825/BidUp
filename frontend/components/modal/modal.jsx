@@ -24,6 +24,7 @@ function Modal({modal, closeModal}) {
       break;
     case 'review':
       component = <CreateReviewContainer />
+      break;
     default:
       return null;
   }
