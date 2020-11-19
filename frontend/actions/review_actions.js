@@ -1,7 +1,16 @@
 import * as ReviewApiUtil from '../util/reviews_api_util';
 
+export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+
+const receiveReviews = reviews => {
+    debugger 
+    return {
+        type: RECEIVE_REVIEWS,
+        reviews
+    }
+}
 
 const receiveReview = review => {
     return{
@@ -15,6 +24,17 @@ const removeReview = reviewId => {
         type: REMOVE_REVIEW,
         reviewId
     }
+}
+
+export const fetchReviews = () => dispatch => {
+    debugger 
+    return ReviewApiUtil.fetchReviews() 
+        .then(payload => dispatch(receiveReviews(payload)))
+}
+
+export const fetchReview = (reviewId) => dispatch => {
+    return ReviewApiUtil.fetchReview(reviewId) 
+        .then(payload => dispatch(receiveReview(payload)))
 }
 
 export const createReview = (review) => {

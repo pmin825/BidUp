@@ -14,9 +14,13 @@ class ProductShow extends React.Component {
             this.setState(this.props.product);
         })
         this.props.fetchUsers();
+        this.props.fetchReviews();
         window.scrollTo(0, 0);
     }
 
+    // componentWillMount() {
+    //     this.props.fetchReviews();
+    // }
 
     render() {
         let showProduct;

@@ -3,6 +3,7 @@ import { fetchProduct, deleteProduct } from '../../actions/product_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import ProductShow from './product_show';
 import { openModal } from '../../actions/modal_actions';
+import { fetchReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let defaultProduct =  {
@@ -40,7 +41,10 @@ const mapDispatchToProps = dispatch => {
         },
         fetchUsers: () => {
             return dispatch(fetchUsers())
-        }
+        },
+        fetchReviews: () => {
+            return dispatch(fetchReviews())
+        },
     }
 }
 
