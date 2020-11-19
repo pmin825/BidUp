@@ -23,7 +23,8 @@ class ReviewIndexItem extends React.Component {
                     {activeStars.map((star) => (star))}
                     {inactiveStars.map((star) => (star))}
                 </div>
-                {this.props.review.feedback}
+                <p>Reviewer: {this.props.review.reviewer_name}</p>
+                <p>{this.props.review.feedback}</p>
             </div>
         )
     }

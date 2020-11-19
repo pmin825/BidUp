@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
             feedback: "",
             rating: 0,
             reviewer_id: "",
-            reviewee_id: ""
+            reviewee_id: "",
+            reviewer_name: "",
         },
         currentUser: state.entities.users[state.session.id],
         sellerId: state.entities.products.seller_id,

@@ -20,35 +20,45 @@ class RatingForm extends React.Component {
 
     handleReview(e) {
         e.preventDefault();
-        let review = { rating: this.state.rating, feedback: this.state.feedback, reviewer_id: this.props.currentUser.id, reviewee_id: this.props.sellerId}
+        let review = { rating: this.state.rating, feedback: this.state.feedback, reviewer_id: this.props.currentUser.id, reviewee_id: this.props.sellerId, reviewer_name: this.props.currentUser.username}
         this.props.createReview(review);
         this.props.closeModal();
     }
 
     render() {
-      return (
-        <div className="rating-form">
-          <div className="form-input">
-            <label>Feedback:</label>
-            <textarea
-              onChange={this.update('feedback')}
-            />
-          </div>
-          <div className="form-input rating">
-            <label htmlFor="rating">Rating:</label>
-            <StarRating
-              numberOfStars="5"
-              currentRating="0"
-              onClick={this.setRating}
-            />
-          </div>
-          <div className="actions">
-            <button type="submit" onClick={this.handleReview}>
-              Submit Rating
-            </button>
-          </div>
-        </div>
-      );
+        const login = (
+            <p className="bid-login-first">You must be logged in to submit a review</p>
+        )
+
+        let submitReview;
+        if (this.props.currentUser) {
+            submitReview = (
+                <div className="rating-form">
+                  <div className="form-input">
+                    <label>Feedback:</label>
+                    <textarea
+                      onChange={this.update('feedback')}
+                    />
+                  </div>
+                  <div className="form-input rating">
+                    <label htmlFor="rating">Rating:</label>
+                    <StarRating
+                      numberOfStars="5"
+                      currentRating="0"
+                      onClick={this.setRating}
+                    />
+                  </div>
+                  <div className="actions">
+                    <button type="submit" onClick={this.handleReview}>
+                      Submit Rating
+                    </button>
+                  </div>
+                </div>
+            )
+        }
+        return (
+          this.props.currentUser ? submitReview : login
+        );
     }
 }
 

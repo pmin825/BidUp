@@ -103,8 +103,8 @@ class ProductShow extends React.Component {
                         </div>
                         <div className="show-border-line2">
                         </div>
-                        <h4>Seller Reviews</h4>
-                        <div>
+                        <div className="seller-reviews">
+                            <h4>Seller Reviews</h4>
                             {allReviews}
                         </div>
                     </div>
