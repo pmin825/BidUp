@@ -48,3 +48,4 @@ export const deleteProduct = (productId) => {
         method: "DELETE"
     })
 }
+

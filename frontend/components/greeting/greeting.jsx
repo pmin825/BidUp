@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SearchIndex from '../search/search_index';
 
 const Greeting = (props) => {
 
@@ -43,6 +44,7 @@ const Greeting = (props) => {
               <div className='search-container'>
                 <i className="fa fa-search">
                   <input className="search-input-one" type="text" placeholder="Search BidUp" name="search" />
+                  {/* <SearchIndex /> */}
                 </i>
               </div>
 

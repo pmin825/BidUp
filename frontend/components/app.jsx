@@ -18,6 +18,7 @@ import ProductShowContainer from './products/product_show_container';
 import CreateProductContainer from './products/create_product_container';
 import EditProductContainer from "./products/edit_product_container"
 import BidIndexContainer from "./bids/bid_index_container"
+import SearchContainer from "./search/search_container";
 
 const App = () => (
   <div>
@@ -33,6 +34,7 @@ const App = () => (
           <ProtectedRoute exact path='/products/new' component={CreateProductContainer} />
           <Route exact path='/products/:productId/edit' component={EditProductContainer} />
           <Route exact path='/products/:productId' component={ProductShowContainer} />
+          <Route exact path='/search' component={SearchContainer} />
           <Route exact path="/" component={ProductIndexContainer} />
           <Redirect to="/"></Redirect>
       </Switch>
