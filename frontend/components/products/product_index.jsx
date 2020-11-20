@@ -7,13 +7,15 @@ class ProductIndex extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchProducts();
+        debugger 
+        if (this.props.match.url === "/") this.props.fetchProducts();
+        // debugger
         window.scrollTo(0, 0);
     };
 
-    componentWillUnmount() {
-        this.setState({})
-    }
+    // componentWillUnmount() {
+    //     this.setState({})
+    // }
 
     render(){
 

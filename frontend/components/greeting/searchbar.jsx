@@ -11,13 +11,17 @@ class SearchBar extends React.Component{
     };
 
 
+    componentDidMount() {
+
+    }
+
     update(e) {
         e.preventDefault();
         this.setState({ search: e.target.value });
     }
     handleSubmit(e) {
         e.preventDefault();
-        
+        debugger 
         this.props.fetchSearchProducts(this.state.search)
             .then(() => this.props.history.push(`/search/${this.state.search}`));
             window.scrollTo(0, 0);
