@@ -4,7 +4,7 @@ import { fetchSearchProducts } from '../../actions/product_actions';
 import { withRouter } from 'react-router-dom'
 
 const mapDispatchToProps = dispatch => ({
-    fetchSearchProducts: searchQuery => dispatch(fetchSearchProducts(searchQuery)),
+    fetchSearchProducts: search => dispatch(fetchSearchProducts(search)),
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
