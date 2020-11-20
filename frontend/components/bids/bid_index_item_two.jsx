@@ -21,18 +21,19 @@ class BidIndexItemTwo extends React.Component{
 
         if (this.props.bid.seller_id === this.props.currentUser.id) {
             return(
-                <Link className="bid-link" to={`/products/${this.props.bid.product_id}`}>
-                    <div className="bid-container">
-                        <span className="bid-product">Product: {this.props.bid.productName}</span>
-                        <span className="bid-amount">Asking Bid: ${this.props.bid.bid_amount}</span>  
-                        <span className="bid-name">Bidder Name: {bidder.username}</span>
-                    </div>
-                </Link>
+                <i class="fas fa-tag">
+                    <Link className="bid-link" to={`/products/${this.props.bid.product_id}`}>
+                        <div className="bid-container" id="bid-container">
+                            <span className="bid-product"><p>Product: </p>{this.props.bid.productName}</span>
+                            <span className="bid-amount"><p>Asking Bid: </p>${this.props.bid.bid_amount}</span>  
+                            <span className="bid-name"><p>Bidder Name: </p>{bidder.username}</span>
+                            <i class="fas fa-user-tag"></i>
+                        </div>
+                    </Link>
+                </i>
             )
         }   else {
-            return(
-                <div></div>
-            )
+            return null;
         }
     }
 }   

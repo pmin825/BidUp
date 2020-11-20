@@ -13,6 +13,9 @@ class BidIndex extends React.Component {
         this.props.fetchUsers();
     }
 
+    
+
+
     render() {
         
         // let bids = this.props.bids.map((bid, idx) => {
@@ -27,6 +30,10 @@ class BidIndex extends React.Component {
             return <BidIndexItemTwo bid={bid} key={idx} deleteBid={this.props.deleteBid} users={this.props.users} currentUser={this.props.currentUser}/>
         })
 
+        
+        // let shopNow;
+        // if(document.body.contains(document.getElementById('bid-container'))) shopNow = <i class="fas fa-shopping-bag"></i>
+        // // debugger 
         return (
                 <div className="bid-body">
                     <div className="bid-list-wrapper">
@@ -37,6 +44,7 @@ class BidIndex extends React.Component {
                         <div className="bid-buying">
                             <h3>Buying</h3>
                             {bids}
+                            {/* {shopNow} */}
                         </div>              
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import BidForm from './bid_form';
 import { createBid } from '../../actions/bid_actions'
 import {withRouter} from 'react-router-dom'
 import {closeModal} from '../../actions/modal_actions';
+import {fetchBids} from '../../actions/bid_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -23,7 +24,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createBid: (bid) => dispatch(createBid(bid)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchBids: () => dispatch(fetchBids())
     }
 }
 

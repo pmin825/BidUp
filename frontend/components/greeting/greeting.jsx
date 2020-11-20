@@ -19,7 +19,7 @@ const Greeting = (props) => {
     if (props.currentUser ) {
         welcome = (
         <div className="welcome-message">
-            <Link className="user-link" to="/bids"><p className="welcome-name">{props.currentUser.username}</p></Link>
+            <p className="welcome-name">{props.currentUser.username}</p>
             <button className="logout-button" onClick={props.logout}>Logout</button>
         </div>
       );
@@ -57,11 +57,13 @@ const Greeting = (props) => {
             </section>
 
             <nav className="login-signup">
-              <i className="fas fa-camera"></i>
               <Link to="/products/new">
+              <i className="fas fa-camera"></i>
                 <button className="session-button">Sell</button>
               </Link>
-              <button className="session-button">About</button>
+              <Link className="user-link" to="/bids">
+                <button className="session-button">My Bids</button>
+              </Link>
               {props.currentUser ? welcome : sessionLinks}  
             </nav>  
           </nav>

@@ -23,7 +23,9 @@ class BidForm extends React.Component {
             bid_amount: "",
         });
         this.props.closeModal();
-        alert('Your Bid as been successfully submitted')
+        this.props.fetchBids();
+        this.props.history.push("/bids");
+        // alert('Your Bid as been successfully submitted')
     }
 
     render() {
