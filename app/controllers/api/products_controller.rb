@@ -44,7 +44,7 @@ class Api::ProductsController < ApplicationController
     def search
         query=params[:query]
         
-        @products = Product.where('name ILIKE ?', "%#{query}%")
+        @products = Product.where('name ILIKE ? OR location ILIKE ?',  "%#{query}%", "%#{query}%")
         if @products
             render :index
         else

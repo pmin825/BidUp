@@ -30,6 +30,9 @@ class SearchBar extends React.Component{
                 <i className="fa fa-search">
                 <input className="search-input-one" placeholder="Search BidUp" name="search" onChange={this.update} type="text" />
                 </i>
+                <i className="fas fa-map-marker-alt">
+                  <input className="search-input-two" type="text" onChange={this.update} placeholder="Nearby" name="search" />
+                </i>
                 <button className="go-button">GO</button>
             </form>
             )
