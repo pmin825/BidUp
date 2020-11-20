@@ -49,3 +49,11 @@ export const deleteProduct = (productId) => {
     })
 }
 
+export const fetchSearchProducts = (query) => (
+    $.ajax({
+        method: 'GET',
+        url: '/api/products/search',
+        data: { query: query}
+            
+    })
+)

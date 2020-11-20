@@ -52,3 +52,9 @@ export const deleteProduct = (productId) => dispatch => {
     return ProductAPIUtil.deleteProduct(productId)
         .then(() => dispatch(removeProduct(productId)))
 }
+
+export const fetchSearchProducts = (query) => dispatch => {
+    return ProductAPIUtil.fetchSearchProducts(query)
+        .then(payload => dispatch(receiveProducts(payload)))
+           
+}

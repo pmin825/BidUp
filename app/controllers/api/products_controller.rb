@@ -41,6 +41,17 @@ class Api::ProductsController < ApplicationController
         end
     end
 
+    def search
+        query=params[:query]
+        
+        @products = Product.where('name ILIKE ? OR description ILIKE ?', "%#{query}%","%#{query}%")
+        if @products.length > 0
+            render :index
+        else
+            render json: ["No results found for #{query}","try searching for another item."], status: 422 
+        end
+    end
+
     private 
 
     def product_params

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SearchIndex from '../search/search_index';
+import SearchBarContainer from './searchbar_container';
 
 const Greeting = (props) => {
 
@@ -42,18 +42,18 @@ const Greeting = (props) => {
             </div>
             <section className="nav-mid">
               <div className='search-container'>
-                <i className="fa fa-search">
-                  <input className="search-input-one" type="text" placeholder="Search BidUp" name="search" />
-                  {/* <SearchIndex /> */}
-                </i>
+                {/* <i className="fa fa-search"> */}
+                  {/* <input className="search-input-one" type="text" placeholder="Search BidUp" name="search" /> */}
+                  <SearchBarContainer />
+                {/* </i> */}
               </div>
 
-              <div className='search-container'>
+              {/* <div className='search-container'>
                 <i className="fas fa-map-marker-alt">
                   <input className="search-input-two" type="text" placeholder="Nearby" name="search" />
                 </i>
                   <button className="go-button">GO</button>
-              </div>
+              </div> */}
             </section>
 
             <nav className="login-signup">
