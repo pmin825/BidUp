@@ -4,7 +4,12 @@ import BidIndexItemTwo from './bid_index_item_two';
 
 class BidIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            selected: 'selling'
+        }
+        this.changeSelectedToBuying = this.changeSelectedToBuying.bind(this);
+        this.changeSelectedToSelling = this.changeSelectedToSelling.bind(this);
     }
 
     componentDidMount() {
@@ -13,7 +18,13 @@ class BidIndex extends React.Component {
         this.props.fetchUsers();
     }
 
-    
+    changeSelectedToBuying() {
+        this.setState({selected: "buying"})
+    }
+
+    changeSelectedToSelling() {
+        this.setState({selected: "selling"})
+    }
 
 
     render() {
@@ -34,21 +45,29 @@ class BidIndex extends React.Component {
         // let shopNow;
         // if(document.body.contains(document.getElementById('bid-container'))) shopNow = <i class="fas fa-shopping-bag"></i>
         // // debugger 
-        return (
-                <div className="bid-body">
-                    <div className="bid-list-wrapper">
+        if (this.state.selected === "selling") {
+            return (
+                    <div className="bid-body">
+                        <div className="bid-list-wrapper">
                             <h3>Selling</h3>
-                        <div className="bid-selling">
-                            {sellItems}
+                            <div className="bid-selling">
+                                {sellItems}
+                            </div>
                         </div>
-                            <h3>Buying</h3>
-                        <div className="bid-buying">
-                            {bids}
-                            {/* {shopNow} */}
-                        </div>              
                     </div>
-                </div>
-        )
+            )  
+        }   else {
+            return (
+                    <div className="bid-body">
+                        <div className="bid-list-wrapper">
+                            <h3>Buying</h3>
+                            <div className="bid-buying">
+                                {bids}
+                            </div>              
+                        </div>
+                    </div>
+            )
+        }
     }
 }
 export default BidIndex;
