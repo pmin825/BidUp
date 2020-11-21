@@ -1,45 +1,52 @@
-.bid-container span {
-    // padding-top: 10px;
-    // padding-bottom: 10px;
-}
 
 .bid-container {
     margin-bottom: 20px;
     font-size: 20px;
     font-family: Lato,sans-serif;
-    color: darkslategray;
-    border: 1px solid gray;
+    color: whitesmoke;
+    // font-weight: 900;
+    border: 1px solid rgba(128, 128, 128, 0.39);
     border-radius: .25rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: left;
-    width: 100px;
-    background-color: rgba(211, 211, 211, 0.815);
+    width: 200px;
+    background-color: rgba(169, 169, 169, 0.801);
     padding: 10px;
-    height: 270px;
+    margin: 10px;
+    height: 220px;
     text-overflow: ellipsis;
     overflow: hidden;
-    // white-space: nowrap;
+    white-space: nowrap;
+}
+
+.bid-container:hover {
+    top: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease;
+    transition: background-color.4s ease-out;
 }
 
 .bid-list-wrapper h3 {
     // background-color: #f4f4f4;
     font-size: 22px;
     font-family: Lato,sans-serif;
-    color: black;
+    color: #00ab80;
     font-weight: 900;
     // margin-top: 25px;
     // margin-bottom: 25px;
-    border-bottom: 1px solid grey;
+    // border-bottom: 1px solid grey;
+    margin-right: 15px;
 }
 
 .bid-selling h3 {
-    height: 50px;
+    // height: 50px;
     margin-bottom: 20px;
 }
 
 .bid-buying h3 {
-    height: 50px;
+    // height: 50px;
     margin-bottom: 20px;
 }
 
@@ -47,98 +54,107 @@
     text-decoration: none;
 }
 
-.bid-name {
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-overflow: ellipsis;   
-}
+// .bid-name {
+//     margin-top: 5px;
+//     margin-left: 5px;
+//     margin-right: 5px;
+//     margin-bottom: 5px;
+//     text-overflow: ellipsis;   
+// }
 
-.bid-product {
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-overflow: ellipsis;  
-}
+// .bid-product {
+//     margin-top: 5px;
+//     margin-left: 5px;
+//     margin-right: 5px;
+//     margin-bottom: 5px;
+//     text-overflow: ellipsis;  
+// }
 
-.bid-amount {
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-overflow: ellipsis;  
-}
+// .bid-amount {
+//     margin-top: 5px;
+//     margin-left: 5px;
+//     margin-right: 5px;
+//     margin-bottom: 5px;
+//     text-overflow: ellipsis;  
+// }
 
 .bid-name p {
-    color: rgba(255, 255, 255, 0.89);
+    color: black;
     text-overflow: ellipsis;   
-    	-webkit-text-stroke: .5px black;
-    -webkit-text-fill-color: white;
+
     font-size: 22px;
 }
 
 .bid-product p {
-    color: white;
+    color: black;
     text-overflow: ellipsis; 
-    	-webkit-text-stroke: .5px black;
-    -webkit-text-fill-color: white;
+
         font-size: 22px;
 
 }
 
 .bid-amount p {
-    color: white;
+    color: black;
     text-overflow: ellipsis;
-    	-webkit-text-stroke: .5px black;
-    -webkit-text-fill-color: white;  
+  
         font-size: 22px;
     
 }
 
 .bid-selling {
-    width: 100%;
+    // width: 700px;
     padding: 20px;
-    background-color: #f4f4f4;
+    // background-color: #f4f4f4;
+    display: flex;
+    overflow: auto;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
 }
 
 .bid-buying {
-    width: 100%;
+    // width: 700px;
     padding: 20px;
-    background-color: #f4f4f4;
+    // background-color: #f4f4f4;
+    display: flex;
+    overflow: auto;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly
 }
 
 .bid-body {
-    // background-color: lightgray;
+    background-color: whitesmoke;
     height: fit-content;
 }
 
 .bid-list-wrapper {
     margin-top: 100px;
     min-height: 450px;
-    height: 100%;
-    // max-height: 100%;
+    // height: 600px;
+
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    width: 85vw;
-    display: flex;
-    justify-content: space-evenly;
+    // width: 85vw;
+    // justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
+    width: 85vw;
+    padding: 20px;
+    background-color: white;
+    overflow: none;
     // margin-top: 20px;
 }
 
 .fas.fa-tag {
     font-size: 50px;
     color: #00ab80;
+
 }
 
-fas.fa-user-tag {
-    font-size: 50px;
+.fas.fa-user-tag {
     color: #00ab80;
+    margin-left: 10px;
 }
 

@@ -14,7 +14,9 @@
 } 
 
 .product-form-wrapper {
-     border: solid black 2px;
+     border: solid lightgray 2px;
+     margin-bottom: 40px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
      /* height: 100vh; */
 }
 
@@ -112,18 +114,26 @@ label input {
     font-weight: 900;
     color: #00ab80;
     text-align: center;
+    border-bottom: darkgray 1px solid;
+    padding-bottom: 20px;
+    // box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .form-banner {
     margin-top: 100px;
+    // background-color: white;
+        // box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 .plist-container {
-    /* height: 1000px; */
-    margin-bottom: 50px;
+    // height: 100%;
+    // margin-bottom: 50px;
+    background-color: whitesmoke;
 }
 
 .product-form-container2 {
+    height: 100%;
     display: flex;
     justify-content: center;
     margin-top: 40px;

@@ -38,8 +38,8 @@ class BidForm extends React.Component {
             submitBid = (
                 <div className="create-bid-container">
                     <form className="create-bid-form">
-                        <h1 className="form-title">Submit a Bid</h1>
-                        <input className="bid-amount-input" type="number" min="1" name="bid_amount" onChange={this.update("bid_amount")} value={this.state.bid_amount} />
+                        <h1 className="form-title">Enter Your Bid</h1>
+                        <input className="bid-amount-input" type="number" min="1" name="bid_amount" placeholder="0" onChange={this.update("bid_amount")} value={this.state.bid_amount} />
                         <button className="bid-submit-button" onClick={this.handleSubmit}>Submit Bid</button>
                     </form>
                 </div>

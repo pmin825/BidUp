@@ -37,12 +37,12 @@ class BidIndex extends React.Component {
         return (
                 <div className="bid-body">
                     <div className="bid-list-wrapper">
-                        <div className="bid-selling">
                             <h3>Selling</h3>
+                        <div className="bid-selling">
                             {sellItems}
                         </div>
-                        <div className="bid-buying">
                             <h3>Buying</h3>
+                        <div className="bid-buying">
                             {bids}
                             {/* {shopNow} */}
                         </div>              

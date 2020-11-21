@@ -35,13 +35,14 @@ class RatingForm extends React.Component {
             submitReview = (
                 <div className="rating-form">
                   <div className="form-input">
-                    <label>Feedback:</label>
+                    <p>Please rate and leave the seller feedback!</p>
                     <textarea
+                    placeholder="Write your feedback here, and rate the seller below."
                       onChange={this.update('feedback')}
                     />
                   </div>
                   <div className="form-input rating">
-                    <label htmlFor="rating">Rating:</label>
+                    {/* <label htmlFor="rating">Rating:</label> */}
                     <StarRating
                       numberOfStars="5"
                       currentRating="0"
@@ -50,7 +51,7 @@ class RatingForm extends React.Component {
                   </div>
                   <div className="actions">
                     <button type="submit" onClick={this.handleReview}>
-                      Submit Rating
+                      Submit Review
                     </button>
                   </div>
                 </div>
