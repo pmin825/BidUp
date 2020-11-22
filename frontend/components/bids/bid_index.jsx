@@ -6,7 +6,7 @@ class BidIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: 'selling'
+            selected: 'selling',
         }
         this.changeSelectedToBuying = this.changeSelectedToBuying.bind(this);
         this.changeSelectedToSelling = this.changeSelectedToSelling.bind(this);
@@ -48,8 +48,13 @@ class BidIndex extends React.Component {
         if (this.state.selected === "selling") {
             return (
                     <div className="bid-body">
-                        <div className="bid-list-wrapper">
-                            <h3>Selling</h3>
+                        <div className="bid-wrap">
+                            <h1>My Bids</h1>
+                            <div className="bid-list-title">
+                                <h3 className={this.state.selected === 'selling' ? 'active-title' : 'inactive-title'} onClick={this.changeSelectedToSelling}>Selling</h3>
+                                <h3 className={this.state.selected === 'buying' ? 'active-title' : 'inactive-title'} onClick={this.changeSelectedToBuying}>Buying</h3>
+                            </div>
+                            <div className="title-border"></div>
                             <div className="bid-selling">
                                 {sellItems}
                             </div>
@@ -59,12 +64,17 @@ class BidIndex extends React.Component {
         }   else {
             return (
                     <div className="bid-body">
-                        <div className="bid-list-wrapper">
-                            <h3>Buying</h3>
+                        <div className="bid-wrap">
+                            <h1>My Bids</h1>
+                            <div className="bid-list-title">
+                                <h3 className={this.state.selected === 'selling' ? 'active-title' : 'inactive-title'} onClick={this.changeSelectedToSelling}>Selling</h3>
+                                <h3 className={this.state.selected === 'buying' ? 'active-title' : 'inactive-title'} onClick={this.changeSelectedToBuying}>Buying</h3>
+                            </div>
+                            <div className="title-border"></div>
                             <div className="bid-buying">
                                 {bids}
-                            </div>              
-                        </div>
+                            </div>  
+                        </div>            
                     </div>
             )
         }
