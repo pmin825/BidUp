@@ -48,6 +48,10 @@
 
 ## Edit Product page - Code Walk Through
 
+*  Users can edit their own product listings
+
+*  Can compare old and new product photo before submitting
+
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productupdate.png "Edit form")
 
 ```js
