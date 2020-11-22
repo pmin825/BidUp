@@ -20,7 +20,7 @@
 
 ## Splash page
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash.png "Splash page")
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash1.png "Splash page")
 
 ## Product Show page
 
