@@ -62,9 +62,9 @@ class ProductShow extends React.Component {
             <div className="show-page">
                 <div className="show-product-body">
                     <div className="show-top-row">
-                        <p>BidUp is the easiest way to buy and sell locally. Get the free app.</p>
-                        <i className="fab fa-github"></i>
-                        <i className="fab fa-linkedin"></i>
+                        <p>BidUp is the easiest way to buy and sell. Created by Peter Min.</p>
+                        <a href="https://github.com/pmin825/" target="_blank"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/peter-min-02a62a13a/" target="_blank"><i className="fab fa-linkedin"></i></a>
                     </div>
                     <div className="mask">
                         <div className="show-product-image-cont">

@@ -1,3 +1,5 @@
+
+
 .show-product-body {
     margin-top: 80px;
     z-index: 1;
@@ -35,7 +37,7 @@
 }
 
 .show-page {
-    height: fit-content;
+    overflow-x: hidden;
 }
 
 .show-description-body {
@@ -254,6 +256,8 @@ h4 {
 
 .seller-reviews {
     min-height: 200px;
+    max-height: 420px;
+    overflow: auto;
 }
 
 .seller-reviews h4 {
@@ -270,4 +274,8 @@ h4 {
     font-weight: 400;
     color: #4a4a4a;
     padding-top: 5px;
+}
+
+.show-top-row i {
+    color: black;
 }
