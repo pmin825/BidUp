@@ -24,7 +24,7 @@
 
 ## Product Show page
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow3.png "Splash page")
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Show page")
 
 ## Edit Product page - Code Walk Through
 
