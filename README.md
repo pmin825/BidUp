@@ -22,17 +22,29 @@
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/splash1.png "Splash page")
 
-## Product Show page
+## Bids
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Show page")
+*  Users can submit bids on products
 
-## Bids page
+*  Users can also see items with bids that they are either buying or selling
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/bids.png "Bids page")
 
-## Reviews page
+## Reviews 
+
+*  A modal pops open for user to submit a review and a rating 
+
+*  Users can leave feedback for sellers
+
+*  Users are able to rate sellers based on a star rating system
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/reviewmodal.png "Review modal")
+
+## Product Search 
+
+* Products can be filtered by searching keywords, with results for partial and complete search queries. 
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Show page")
 
 ## Edit Product page - Code Walk Through
 
