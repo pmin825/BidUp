@@ -44,7 +44,7 @@
 
 * Products can be filtered by searching keywords, with results for partial and complete search queries. 
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Show page")
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/search.png "Show page")
 
 ## Edit Product page - Code Walk Through
 
