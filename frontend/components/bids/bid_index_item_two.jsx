@@ -26,8 +26,7 @@ class BidIndexItemTwo extends React.Component{
                         <div className="bid-container" id="bid-container">
                             <span className="bid-product"><p>Product </p>{this.props.bid.productName}</span>
                             <span className="bid-amount"><p>Asking Bid </p>${this.props.bid.bid_amount}</span>  
-                            <span className="bid-name"><p>Bidder Name </p>{bidder.username}<i class="fas fa-user-tag"></i></span>
-                           
+                            <span className="bid-name"><p>Bidder </p>{bidder.username}<i class="fas fa-user-tag"></i></span>    
                         </div>
                     </Link>
             )

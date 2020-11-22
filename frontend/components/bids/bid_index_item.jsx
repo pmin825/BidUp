@@ -25,7 +25,7 @@ class BidIndexItem extends React.Component{
                         <div className="bid-container">
                             <span className="bid-product"><p>Product </p>{this.props.bid.productName}</span>
                             <span className="bid-amount"><p>Bid Price </p>${this.props.bid.bid_amount}</span> 
-                            <span className="bid-name"><p>Seller Name </p>{seller.username}<i class="fas fa-user-tag"></i></span> 
+                            <span className="bid-name"><p>Seller </p>{seller.username}<i class="fas fa-user-tag"></i></span> 
                             
                         </div>
                     </Link>
