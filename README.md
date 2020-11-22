@@ -26,6 +26,14 @@
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productshow.png "Show page")
 
+## Bids page
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/bids.png "Bids page")
+
+## Reviews page
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/reviewmodal.png "Review modal")
+
 ## Edit Product page - Code Walk Through
 
 ![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/updateproduct.png "Edit form")
