@@ -88,8 +88,8 @@ class EditProductForm extends React.Component {
 
 ## Future Direction
 
-*  Bids: Users are able to submit bids on product listings. Buyers and sellers both will have a user profile page that shows the items they have bidded on and/or are selling. 
+*  Messages: Users will be able to send each other messages. 
 
-*  Ratings/Reviews: Users are able to leave a rating and review for each other. 
+*  Profiles: Users will have their own profile pages.
 
-*  Search: Users can search for product through text to see that product's listings.. 
+*  Past activity: Users can see past products they've sold or purchased. 
