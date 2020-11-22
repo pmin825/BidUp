@@ -66,6 +66,10 @@
   padding-bottom: 5px;
   font-family: Lato, sans-serif;
   line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden
 }
 
 .product-info p:nth-child(1) {
@@ -74,7 +78,9 @@
   font-weight: 700;
   display: block;
   text-decoration: none;
+  white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden
 
 }
 
@@ -83,6 +89,9 @@
   color: #4a4a4a;
   font-weight: 900;
   display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden
   
 }
 
@@ -92,7 +101,7 @@
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
-  
+  overflow: hidden;
 }
 
 .prod-words {

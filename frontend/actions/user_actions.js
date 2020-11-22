@@ -14,8 +14,8 @@ export const fetchUsers = () => (dispatch) => {
     })
 }
 
-// export const fetchUser = (userId) => (dispatch) => {
-//     return UserApiUtil.fetchUser(userId).then((payload) => {
-//         dispatch(receiveCurrentUser(payload))
-//     })
-// }
+export const fetchUser = (userId) => (dispatch) => {
+    return UserApiUtil.fetchUser(userId).then((payload) => {
+        dispatch(receiveCurrentUser(payload))
+    })
+}
