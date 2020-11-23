@@ -48,7 +48,11 @@
 
 ## Edit Product page - Code Walk Through
 
-![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/updateproduct.png "Edit form")
+*  Users can edit their own product listings
+
+*  Can compare old and new product photo before submitting
+
+![alt text](https://github.com/pmin825/BidUp/blob/master/app/assets/images/productupdate.png "Edit form")
 
 ```js
 class EditProductForm extends React.Component {
