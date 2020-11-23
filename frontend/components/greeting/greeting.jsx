@@ -38,7 +38,7 @@ const Greeting = (props) => {
         <nav className="nav-container">
           <nav className="nav-bar">
             <div className="nav-start">
-              <Link className="logo-name" to="/">BidUp</Link>
+              <Link className="logo-name" to="/home">BidUp</Link>
             </div>
             <section className="nav-mid">
               <div className='search-container'>
