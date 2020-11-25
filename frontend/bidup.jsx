@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function initializeReactGA() {
     ReactGA.initialize('G-6CBPE55S7T');
-    ReactGA.pageview('/homepage');
+    ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     initializeReactGA(); 
