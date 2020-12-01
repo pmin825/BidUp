@@ -6,13 +6,19 @@ import {closeModal} from '../../actions/modal_actions';
 import {fetchBids} from '../../actions/bid_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    let currentMax = Object.values(state.entities.bids).filter(bid => bid.seller_id === state.entities.products.seller_id).map(bid => bid.bid_amount).sort()[0];
+    let productBids = Object.values(state.entities.bids).filter(bid => bid.seller_id === state.entities.products.seller_id).map(bid => bid.bidder_id);
     return {
+        currentMax,
+        productBids,
+        bids: state.entities.bids,
         bid: {
             bid_amount: "",
             bidder_id: "",
             product_id: "",
             seller_id: "",
             productName: "",
+            error: "",
         },
         sellerId: state.entities.products.seller_id,
         productId: state.entities.products.id, 
