@@ -32,8 +32,9 @@ class BidForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger 
-
-        if (this.state.bid_amount <= this.props.currentMax) {
+        if (this.props.productBids.includes(this.props.currentUser.id)) {
+            this.setState({ error: "You've already bidded on this item!" })
+        }   else if (this.state.bid_amount <= this.props.currentMax) {
             this.setState({ error: "Bid amount too low. Bid higher!" })
         }   else {
             let bid = { bid_amount: this.state.bid_amount, bidder_id: this.props.currentUser.id, product_id: this.props.productId, seller_id: this.props.sellerId, productName: this.props.productName }
@@ -47,9 +48,7 @@ class BidForm extends React.Component {
             this.props.fetchBids();
             this.props.history.push("/bids");
         }
-        if (this.props.productBids.includes(this.props.currentUser.id)) {
-            this.setState({ error: "Only 1 Bid per item allowed." })
-        }
+        
     }
 
     render() {
