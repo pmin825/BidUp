@@ -24,11 +24,10 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = Product.find_by(id: params[:id])
-
         if @product.update(product_params)
             render :show
         else
-            render json: @product.errors.full_message, status: 422
+            render json: @product.errors.full_messages, status: 422
         end
     end
 

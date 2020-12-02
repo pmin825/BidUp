@@ -44,7 +44,6 @@ class BidIndex extends React.Component {
         
         // let shopNow;
         // if(document.body.contains(document.getElementById('bid-container'))) shopNow = <i class="fas fa-shopping-bag"></i>
-        // // debugger 
         if (this.state.selected === "selling") {
             return (
                     <div className="bid-body">

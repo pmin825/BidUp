@@ -24,6 +24,9 @@ class EditProductForm extends React.Component {
         window.scrollTo(0, 0);
     }
 
+    componentWillUnmount() {
+        this.props.clearProductErrors();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -39,13 +42,11 @@ class EditProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[photoFile]', this.state.photoFile);
         formData.append('product[id]', productId);
-        
-
-   
+           
         this.props.updateProduct(formData)
             .then(() => {
                 this.props.history.push('/')
-            });
+            })
         }   else {
    
             this.props.updateProduct2(this.state)
@@ -76,6 +77,19 @@ class EditProductForm extends React.Component {
 
     
     render() {
+
+        let nameError;
+        if (this.props.errors.includes("Name can't be blank")) nameError = "*Name can't be blank"
+        
+        let priceError;
+        if (this.props.errors.includes("Price can't be blank")) priceError = "*Enter a price"
+        if (this.props.errors.includes("Price is not a number")) priceError = "*Price must be a number value"
+
+        let descriptionError;
+        if (this.props.errors.includes("Description can't be blank")) descriptionError = "*Description can't be blank"
+
+        let locationError;
+        if (this.props.errors.includes("Location can't be blank")) locationError = "*Please enter a location"
 
         const preview = this.state.photoUrl ? 
         <>
@@ -110,18 +124,22 @@ class EditProductForm extends React.Component {
                             {preview}
                             <label><span>Product name</span>
                                 <p>Include keywords that buyers would use to search for your item.</p>
+                                <span className="create-error">{nameError}</span>
                                 <input type="text" value={this.state.name} onChange={this.update('name')}/>
                             </label>
                             <label><span>Price</span>
                                 <p>Select a starting price for customers to bid on.</p>
+                                <span className="create-error">{priceError}</span>
                                 <input type="text" value={this.state.price} onChange={this.update('price')}/>
                             </label>
                             <label><span>Location</span>
                                 <p>Enter your location so local buyers can find you.</p>
+                                <span className="create-error">{locationError}</span>
                                 <input type="text" value={this.state.location} onChange={this.update('location')}/>
                             </label>
                             <label className="prod-form-desc"><span>Description</span>
                                 <p>Write a description about your product here. The more information the better. </p>
+                                <span className="create-error">{descriptionError}</span>
                                 <textarea value={this.state.description} onChange={this.update('description')}/>
                             </label>
                             <div className="create-update-button">

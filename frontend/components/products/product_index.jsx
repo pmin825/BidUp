@@ -8,7 +8,6 @@ class ProductIndex extends React.Component {
 
     componentDidMount(){
         if (this.props.match.url === "/") this.props.fetchProducts();
-        // debugger
         window.scrollTo(0, 0);
     };
 

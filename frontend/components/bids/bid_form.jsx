@@ -31,7 +31,7 @@ class BidForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger 
+        // debugger 
 
         if (this.state.bid_amount <= this.props.currentMax) {
             this.setState({ error: "Bid amount too low. Bid higher!" })
@@ -53,7 +53,7 @@ class BidForm extends React.Component {
     }
 
     render() {
-        debugger 
+        // debugger 
         const login = (
             <p className="bid-login-first">You must be logged in to submit a bid</p>
         )

@@ -17,6 +17,10 @@ class ProductForm extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.clearProductErrors();
+    }
+
     componentDidUpdate(prevProps){
         if (this.props.formType === 'update') {
             if (prevProps.product.id != this.props.match.params.productId) {
@@ -29,17 +33,21 @@ class ProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('product[name]', this.state.name);
-        formData.append('product[price]', this.state.price);
-        formData.append('product[description]', this.state.description);
-        formData.append('product[location]', this.state.location);
-        formData.append('product[seller_id]', this.state.seller_id);
-        formData.append('product[photoFile]', this.state.photoFile);
-        this.props.processForm(formData)
-            .then(() => {
-                this.props.history.push('/')
-            });
+        if (this.state.photoFile === null) {
+            this.setState({ photoError: "*Photo required, upload before proceeding." })
+        }   else {
+            const formData = new FormData();
+            formData.append('product[name]', this.state.name);
+            formData.append('product[price]', this.state.price);
+            formData.append('product[description]', this.state.description);
+            formData.append('product[location]', this.state.location);
+            formData.append('product[seller_id]', this.state.seller_id);
+            formData.append('product[photoFile]', this.state.photoFile);
+            this.props.processForm(formData)
+                .then(() => {
+                    this.props.history.push('/')
+                });
+        }
     }
 
     update(field) {
@@ -57,6 +65,7 @@ class ProductForm extends React.Component {
         }
         if (file) {
             reader.readAsDataURL(file);
+            this.setState({ photoError: "" })
         } 
 
     }
@@ -64,13 +73,27 @@ class ProductForm extends React.Component {
     
     render() {
         const preview = this.state.photoUrl ? <img className="photo-prev" src={this.state.photoUrl}/> : null 
+        
+        let nameError;
+        if (this.props.errors.includes("Name can't be blank")) nameError = "*Name can't be blank"
+        
+        let priceError;
+        if (this.props.errors.includes("Price can't be blank")) priceError = "*Enter a price"
+        if (this.props.errors.includes("Price is not a number")) priceError = "*Price must be a number value"
+
+        let descriptionError;
+        if (this.props.errors.includes("Description can't be blank")) descriptionError = "*Description can't be blank"
+
+        let locationError;
+        if (this.props.errors.includes("Location can't be blank")) locationError = "*Please enter a location"
+
         return(
             <div className="plist-container">
                 <div className="form-banner">
                     <h1>Create your product listing</h1>
                 </div>
                 <div className="product-form-container2">
-                    <form className="product-form-wrapper" onSubmit={this.handleSubmit}>
+                    <form className="product-form-wrapper" onSubmit={this.handleSubmit} noValidate>
                         <div className="product-form-section">
                             
                             <div className ="photo-input-container">
@@ -86,21 +109,25 @@ class ProductForm extends React.Component {
                             </div>
                             
                             {preview}
-                            
+                            <span className="create-error">{this.state.photoError}</span>
                             <label><span>Product name</span>
                                 <p>Include keywords that buyers would use to search for your item.</p>
+                                <span className="create-error">{nameError}</span>
                                 <input type="text" value={this.state.name} onChange={this.update('name')}/>
                             </label>
                             <label><span>Price</span>
                                 <p>Select a starting price for customers to bid on.</p>
+                                <span className="create-error">{priceError}</span>
                                 <input type="text" value={this.state.price} onChange={this.update('price')}/>
                             </label>
                             <label><span>Location</span>
                                 <p>Enter your location so local buyers can find you.</p>
+                                <span className="create-error">{locationError}</span>
                                 <input type="text" value={this.state.location} onChange={this.update('location')}/>
                             </label>
                             <label className="prod-form-desc"><span>Description</span>
                                 <p>Write a description about your product here. The more information the better. </p>
+                                <span className="create-error">{descriptionError}</span>
                                 <textarea value={this.state.description} onChange={this.update('description')}/>
                             </label>
                             <div className="create-update-button">

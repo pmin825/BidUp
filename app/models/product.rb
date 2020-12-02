@@ -2,6 +2,7 @@ class Product < ApplicationRecord
 
     validates :name, :price, :description, :location, presence: true  
     validates :seller_id, presence: true
+    validates :price, numericality: {only_integer: true}
 
     belongs_to :seller,
         foreign_key: :seller_id,
