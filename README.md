@@ -4,9 +4,15 @@
 
 ## Key Features 
 
-*  Session: Secure account creation, login, and guest/demo login
+*  Session: Secure account creation, login, and guest/demo login.
 
-*  Products: Users are able to create/edit/delete their own product listings
+*  Products: Create/edit/delete product listings.
+
+*  Bids: Submit bids on products.
+
+*  Reviews: Leave feedback and rate sellers via a star-rating system. 
+
+*  Search: Find a specific product or location via search. 
 
 ## Technologies 
 
