@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductIndexItem = (props) => {
-    return(
+    return (
         <div>
-            {/* <Link to={`/products/${props.product.id}`}>{props.product.name}</Link> */}
             <Link className="prod-words" to={`/products/${props.product.id}`}>
                 <div className="product-image">
                     <img src={props.product.photo_url} />
@@ -16,7 +15,7 @@ const ProductIndexItem = (props) => {
                 </div>
             </Link>
         </div>
-    )
-}
+    );
+};
 
 export default ProductIndexItem;

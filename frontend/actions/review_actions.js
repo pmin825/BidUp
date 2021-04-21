@@ -1,53 +1,54 @@
-import * as ReviewApiUtil from '../util/reviews_api_util';
+import * as ReviewApiUtil from "../util/reviews_api_util";
 
-export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
-export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
+export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
-const receiveReviews = reviews => {
+const receiveReviews = (reviews) => {
     return {
         type: RECEIVE_REVIEWS,
-        reviews
-    }
-}
+        reviews,
+    };
+};
 
-const receiveReview = review => {
-    return{
+const receiveReview = (review) => {
+    return {
         type: RECEIVE_REVIEW,
-        review 
-    }
-}
+        review,
+    };
+};
 
-const removeReview = reviewId => {
+const removeReview = (reviewId) => {
     return {
         type: REMOVE_REVIEW,
-        reviewId
-    }
-}
+        reviewId,
+    };
+};
 
-export const fetchReviews = () => dispatch => {
-    return ReviewApiUtil.fetchReviews() 
-        .then(payload => dispatch(receiveReviews(payload)))
-}
+export const fetchReviews = () => (dispatch) => {
+    return ReviewApiUtil.fetchReviews().then((payload) =>
+        dispatch(receiveReviews(payload))
+    );
+};
 
-export const fetchReview = (reviewId) => dispatch => {
-    return ReviewApiUtil.fetchReview(reviewId) 
-        .then(payload => dispatch(receiveReview(payload)))
-}
+export const fetchReview = (reviewId) => (dispatch) => {
+    return ReviewApiUtil.fetchReview(reviewId).then((payload) =>
+        dispatch(receiveReview(payload))
+    );
+};
 
 export const createReview = (review) => {
     return (dispatch) => {
         return ReviewApiUtil.createReview(review).then((payload) => {
-            dispatch(receiveReview(payload))
-        })
-    }
-}
-
+            dispatch(receiveReview(payload));
+        });
+    };
+};
 
 export const deleteReview = (reviewId) => {
     return (dispatch) => {
         return ReviewApiUtil.deleteReview(reviewId).then(() => {
-            dispatch(removeReview(reviewId))
-        })
-    }
-}
+            dispatch(removeReview(reviewId));
+        });
+    };
+};

@@ -1,4 +1,8 @@
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions'
+import {
+    RECEIVE_REVIEWS,
+    RECEIVE_REVIEW,
+    REMOVE_REVIEW,
+} from "../actions/review_actions";
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -6,16 +10,16 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_REVIEWS:
-            return action.reviews
+            return action.reviews;
         case RECEIVE_REVIEW:
-             nextState[action.review.id] = action.review
-             return nextState
+            nextState[action.review.id] = action.review;
+            return nextState;
         case REMOVE_REVIEW:
-            delete nextState[action.reviewId]
+            delete nextState[action.reviewId];
             return nextState;
         default:
             return state;
     }
-}
+};
 
 export default reviewsReducer;

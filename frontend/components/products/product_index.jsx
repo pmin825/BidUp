@@ -1,22 +1,17 @@
-import React from 'react';
-import ProductIndexItem from './product_index_item';
+import React from "react";
+import ProductIndexItem from "./product_index_item";
 
 class ProductIndex extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         if (this.props.match.url === "/") this.props.fetchProducts();
         window.scrollTo(0, 0);
-    };
+    }
 
-    // componentWillUnmount() {
-    //     this.setState({})
-    // }
-
-    render(){
-
+    render() {
         let col1 = [];
         let col2 = [];
         let col3 = [];
@@ -26,19 +21,29 @@ class ProductIndex extends React.Component {
 
         this.props.products.forEach((product) => {
             if (i % 5 === 1) {
-                col1.push(<ProductIndexItem key={product.id} product={product}/>);
+                col1.push(
+                    <ProductIndexItem key={product.id} product={product} />
+                );
             }
             if (i % 5 === 2) {
-                col2.push(<ProductIndexItem key={product.id} product={product}/>);
+                col2.push(
+                    <ProductIndexItem key={product.id} product={product} />
+                );
             }
             if (i % 5 === 3) {
-                col3.push(<ProductIndexItem key={product.id} product={product}/>);
+                col3.push(
+                    <ProductIndexItem key={product.id} product={product} />
+                );
             }
             if (i % 5 === 4) {
-                col4.push(<ProductIndexItem key={product.id} product={product}/>);
+                col4.push(
+                    <ProductIndexItem key={product.id} product={product} />
+                );
             }
             if (i % 5 === 0) {
-                col5.push(<ProductIndexItem key={product.id} product={product}/>);
+                col5.push(
+                    <ProductIndexItem key={product.id} product={product} />
+                );
             }
             i++;
         });
@@ -49,29 +54,19 @@ class ProductIndex extends React.Component {
         col4 = col4.reverse();
         col5 = col5.reverse();
 
-        return(
+        return (
             <section>
-                <div className='column-container'>
+                <div className="column-container">
                     <div className="column-wrapper">
-                        <div className="product-columns">
-                            {col1}
-                        </div>
-                        <div className="product-columns">
-                            {col2}
-                        </div>
-                        <div className="product-columns">
-                            {col3}
-                        </div>
-                        <div className="product-columns">
-                            {col4}
-                        </div>
-                        <div className="product-columns">
-                            {col5}
-                        </div>
+                        <div className="product-columns">{col1}</div>
+                        <div className="product-columns">{col2}</div>
+                        <div className="product-columns">{col3}</div>
+                        <div className="product-columns">{col4}</div>
+                        <div className="product-columns">{col5}</div>
                     </div>
                 </div>
             </section>
-        )
+        );
     }
 }
 

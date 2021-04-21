@@ -1,28 +1,28 @@
 export const fetchBids = () => {
     return $.ajax({
-        url: '/api/bids',
-        method: 'GET'
-    })
-}
+        url: "/api/bids",
+        method: "GET",
+    });
+};
 
 export const fetchBid = (bidId) => {
     return $.ajax({
         url: `/api/bids/${bidId}`,
-        method: 'GET'
-    })
-}
+        method: "GET",
+    });
+};
 
 export const createBid = (bid) => {
     return $.ajax({
-        url: '/api/bids',
-        method: 'POST',
-        data: {bid}
-    })
-}
+        url: "/api/bids",
+        method: "POST",
+        data: { bid },
+    });
+};
 
 export const deleteBid = (bidId) => {
     return $.ajax({
         url: `/api/bids/${bidId}`,
-        method: 'DELETE'
-    })
-}
+        method: "DELETE",
+    });
+};

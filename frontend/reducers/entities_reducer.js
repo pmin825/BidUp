@@ -8,7 +8,7 @@ const entitiesReducer = combineReducers({
     users: usersReducer,
     products: productsReducer,
     bids: bidsReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
 });
 
 export default entitiesReducer;

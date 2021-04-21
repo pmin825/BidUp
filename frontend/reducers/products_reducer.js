@@ -1,22 +1,25 @@
-  
-import { RECEIVE_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../actions/product_actions';
+import {
+    RECEIVE_PRODUCTS,
+    RECEIVE_PRODUCT,
+    REMOVE_PRODUCT,
+} from "../actions/product_actions";
 
-const productsReducer = (state={}, action) => {
-    Object.freeze(state)
-    let newState = Object.assign({}, state)
-    switch(action.type){
+const productsReducer = (state = {}, action) => {
+    Object.freeze(state);
+    let newState = Object.assign({}, state);
+    switch (action.type) {
         case RECEIVE_PRODUCTS:
-            return action.products 
+            return action.products;
         case RECEIVE_PRODUCT:
             // newState[action.product.id] = action.product;
             let product = {};
-            return product[action.product.id] = action.product;
+            return (product[action.product.id] = action.product);
         case REMOVE_PRODUCT:
-            delete newState[action.productId]
+            delete newState[action.productId];
             return newState;
-        default: 
-            return state
+        default:
+            return state;
     }
-}
+};
 
-export default productsReducer
+export default productsReducer;
